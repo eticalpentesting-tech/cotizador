@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: techlion-cotizador
+    runtime: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: ADMIN_PASS
+        sync: false
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
+      - key: PORT
+        sync: false

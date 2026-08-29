@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Techlion · Admin de precios</title>
+<style>
+  :root{
+    --crema:#fbf6ec; --azul:#2563EB; --rojo:#E4002B; --turquesa:#12b5c4;
+    --tinta:#1f2a37; --borde:#e7dcc6; --ok:#16a34a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--crema); color:var(--tinta);
+  }
+  header{
+    background:linear-gradient(90deg,var(--azul),var(--turquesa));
+    color:#fff; padding:14px 20px; display:flex; align-items:center; gap:12px;
+    position:sticky; top:0; z-index:5; box-shadow:0 2px 10px rgba(0,0,0,.12);
+  }
+  header h1{font-size:18px; margin:0; flex:1}
+  header .pill{background:rgba(255,255,255,.18); padding:4px 10px; border-radius:999px; font-size:12px}
+  button{
+    cursor:pointer; border:none; border-radius:10px; padding:10px 16px; font-weight:700;
+    background:var(--azul); color:#fff; font-size:14px;
+  }
+  button.ghost{background:rgba(255,255,255,.18)}
+  button:disabled{opacity:.5; cursor:not-allowed}
+  .wrap{max-width:1100px; margin:0 auto; padding:20px}
+  .card{background:#fff; border:1px solid var(--borde); border-radius:16px; padding:18px; margin-bottom:18px; box-shadow:0 4px 14px rgba(0,0,0,.04)}
+  label{font-weight:600; font-size:13px; display:block; margin-bottom:6px}
+  input[type=password],input[type=number],select{
+    width:100%; padding:10px 12px; border:1px solid var(--borde); border-radius:10px; font-size:14px; background:#fff;
+  }
+  .row{display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end}
+  .row > div{flex:1; min-width:180px}
+  table{width:100%; border-collapse:collapse; font-size:13px}
+  th,td{padding:8px 10px; border-bottom:1px solid var(--borde); text-align:left}
+  th{position:sticky; top:0; background:var(--crema); font-size:12px; text-transform:uppercase; letter-spacing:.03em}
+  td input{width:100px}
+  .venta{font-weight:800; color:var(--azul)}
+  .scroll{max-height:60vh; overflow:auto; border:1px solid var(--borde); border-radius:12px}
+  .status{font-size:13px; font-weight:600; padding:8px 0; min-height:20px}
+  .status.ok{color:var(--ok)} .status.err{color:var(--rojo)}
+  #login{max-width:420px; margin:12vh auto}
+  .topbar{display:flex; gap:12px; align-items:center; margin-bottom:12px; flex-wrap:wrap}
+  .muted{color:#6b7280; font-size:12px}
+</style>
+</head>
+<body>
+
+<div id="login" class="card wrap">
+  <h2>Acceso al dueño</h2>
+  <p class="muted">Solo quien tiene la contraseña puede editar precios.</p>
+  <label for="pass">Contraseña</label>
+  <input id="pass" type="password" autocomplete="current-password" />
+  <div style="height:12px"></div>
+  <button id="loginBtn">Entrar</button>
+  <div id="loginStatus" class="status"></div>
+</div>
+
+<div id="panel" style="display:none">
+  <header>
+    <h1>Techlion · Precios</h1>
+    <span class="pill" id="countPill">0 productos</span>
+    <button class="ghost" id="logoutBtn">Salir</button>
+  </header>
+  <div class="wrap">
+    <div class="card">
+      <div class="topbar">
+        <div>
+          <label for="margenGlobal">Margen global (%) — ganancia SOBRE costo</label>
+          <input id="margenGlobal" type="number" step="5" value="150" style="max-width:160px" />
+          <div class="muted">Ej: 150 = venta = costo × 2.5. Se usa en productos sin margen propio.</div>
+        </div>
+        <div>
+          <label for="filtroMarca">Filtrar por marca</label>
+          <select id="filtroMarca"><option value="">Todas</option></select>
+        </div>
+        <div style="flex:0">
+          <button id="saveBtn">Guardar cambios</button>
+        </div>
+      </div>
+      <div id="status" class="status"></div>
+    </div>
+
+    <div class="card">
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Marca</th><th>Modelo</th><th>Calidad</th><th>Color</th>
+              <th>Costo ($)</th><th>Margen (%)</th><th>Venta ($)</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <div class="muted" style="margin-top:8px">Editá costo y margen por producto. La venta se recalcula en vivo.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+let STATE = { productos: [], margenGlobal: 150, authed: false, filtro: "" };
+
+async function api(path, opts = {}) {
+  return fetch(path, Object.assign({
+    credentials: "same-origin",
+    headers: { "Content-Type": "application/json" }
+  }, opts));
+}
+
+function fmt(n){ return n == null ? "—" : "$" + Math.round(n).toLocaleString("es-CL"); }
+function ventaDe(costo, margen){ return (costo == null) ? null : Math.round(costo * (1 + margen / 100)); }
+
+async function cargar() {
+  const r = await api("/api/productos");
+  const data = await r.json();
+  STATE.productos = data.productos || [];
+  STATE.margenGlobal = Number.isFinite(Number(data.margen)) ? Number(data.margen) : 150;
+  $("#margenGlobal").value = STATE.margenGlobal;
+  $("#countPill").textContent = STATE.productos.length + " productos";
+  const marcas = [...new Set(STATE.productos.map(p => p.marca))].sort((a,b)=>a.localeCompare(b,"es"));
+  const sel = $("#filtroMarca");
+  sel.innerHTML = '<option value="">Todas</option>' + marcas.map(m => `<option value="${m}">${m}</option>`).join("");
+  render();
+}
+
+function margenDeFila(p){
+  const inp = document.querySelector(`input[data-margen="${p.id}"]`);
+  if (inp && inp.value !== "") return Number(inp.value);
+  return Number.isFinite(Number(p.margen)) ? Number(p.margen) : STATE.margenGlobal;
+}
+
+function render() {
+  const lista = STATE.filtro ? STATE.productos.filter(p => p.marca === STATE.filtro) : STATE.productos;
+  const tb = $("#tbody");
+  tb.innerHTML = lista.map(p => {
+    const costo = Number.isFinite(Number(p.precio_pantalla)) ? Number(p.precio_pantalla) : "";
+    const margen = Number.isFinite(Number(p.margen)) ? Number(p.margen) : STATE.margenGlobal;
+    return `<tr>
+      <td>${p.marca}</td>
+      <td>${p.modelo || ""}</td>
+      <td>${p.calidad || ""}</td>
+      <td>${p.color || ""}</td>
+      <td><input type="number" data-costo="${p.id}" value="${costo}" ${STATE.authed?"":"disabled"} /></td>
+      <td><input type="number" step="5" data-margen="${p.id}" value="${margen}" ${STATE.authed?"":"disabled"} /></td>
+      <td class="venta" id="venta-${p.id}">${fmt(ventaDe(costo, margen))}</td>
+    </tr>`;
+  }).join("");
+
+  tb.querySelectorAll("input").forEach(inp => {
+    inp.addEventListener("input", () => {
+      const id = Number(inp.dataset.costo || inp.dataset.margen);
+      const p = STATE.productos.find(x => x.id === id);
+      if (!p) return;
+      const costo = Number(document.querySelector(`input[data-costo="${id}"]`).value);
+      const margen = margenDeFila(p);
+      const v = document.querySelector(`#venta-${id}`);
+      if (v) v.textContent = fmt(ventaDe(costo, margen));
+    });
+  });
+}
+
+async function login() {
+  const pass = $("#pass").value;
+  const r = await api("/api/login", { method: "POST", body: JSON.stringify({ pass }) });
+  if (r.ok) {
+    STATE.authed = true;
+    $("#login").style.display = "none";
+    $("#panel").style.display = "block";
+    await cargar();
+  } else {
+    const j = await r.json().catch(()=>({}));
+    $("#loginStatus").className = "status err";
+    $("#loginStatus").textContent = j.error || "No se pudo entrar";
+  }
+}
+
+async function guardar() {
+  const btn = $("#saveBtn"); btn.disabled = true;
+  const status = $("#status"); status.className = "status"; status.textContent = "Guardando…";
+  const out = STATE.productos.map(p => {
+    const costoInp = document.querySelector(`input[data-costo="${p.id}"]`);
+    const margenInp = document.querySelector(`input[data-margen="${p.id}"]`);
+    return {
+      id: p.id,
+      precio_pantalla: costoInp && costoInp.value !== "" ? Number(costoInp.value) : p.precio_pantalla,
+      margen: margenInp && margenInp.value !== "" ? Number(margenInp.value) : (Number.isFinite(Number(p.margen)) ? p.margen : STATE.margenGlobal)
+    };
+  });
+  try {
+    const r = await api("/api/productos", { method: "POST", body: JSON.stringify({ margen: Number($("#margenGlobal").value), productos: out }) });
+    const j = await r.json().catch(()=>({}));
+    if (r.ok) {
+      status.className = "status ok";
+      status.textContent = `Guardado ✓ (${j.total} productos, margen global ${j.margen}%)`;
+      await cargar();
+    } else {
+      status.className = "status err";
+      status.textContent = j.error || "Error al guardar";
+    }
+  } catch (e) {
+    status.className = "status err"; status.textContent = String(e.message || e);
+  } finally { btn.disabled = false; }
+}
+
+$("#loginBtn").addEventListener("click", login);
+$("#pass").addEventListener("keydown", e => { if (e.key === "Enter") login(); });
+$("#saveBtn").addEventListener("click", guardar);
+$("#logoutBtn").addEventListener("click", () => {
+  STATE.authed = false;
+  $("#panel").style.display = "none";
+  $("#login").style.display = "block";
+});
+$("#filtroMarca").addEventListener("change", e => { STATE.filtro = e.target.value; render(); });
+// Si ya hay cookie de sesión válida, entramos directo; si no, mostramos el login.
+(async () => {
+  try {
+    const r = await api("/api/whoami");
+    if (r.ok) { STATE.authed = true; $("#login").style.display="none"; $("#panel").style.display="block"; await cargar(); }
+  } catch {}
+})();
+</script>
+</body>
+</html>

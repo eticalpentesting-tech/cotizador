@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techlion — Reparamos tu pantalla</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2312b5c4'/><path d='M16 8 L16 24 M11 12 L21 12' stroke='%23fff' stroke-width='3' stroke-linecap='round'/></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="flag-stripe"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="brand"><img src="img/techlion-logo.svg" alt="Techlion" class="brand-logo" onerror="this.style.display='none'">Techlion</span>
+    <a href="#cotizador" class="topbar-cta">Reparar</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Techlion · Reparación de pantallas 🇨🇱</p>
+        <h1>¿Pantalla rota? <span class="hl">La reparamos</span> y te la dejamos como nueva.</h1>
+        <p class="hero-sub">Cotizá al instante con stock real. Reparamos en el día en Coronel y Colina — y nos quedamos con tu equipo hasta dejarlo perfecto.</p>
+        <a href="#cotizador" class="btn btn-primary hero-cta">Cotizar mi pantalla →</a>
+        <ol class="proceso">
+          <li><span class="paso">01</span><strong>Cotizás</strong><span>Precio real al instante</span></li>
+          <li><span class="paso">02</span><strong>Reparamos</strong><span>En el día, con garantía</span></li>
+          <li><span class="paso">03</span><strong>Te lo dejamos</strong><span>funcionando 🇨🇱</span></li>
+        </ol>
+      </div>
+
+      <div class="cotizador-card" id="cotizador">
+        <p class="eyebrow card-eyebrow">Reparación</p>
+
+        <p class="ultima-cotizacion" id="ultima-cotizacion" hidden></p>
+
+        <div class="destacado">
+        <div class="bunting" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <p class="destacado-text">
+          <svg class="trompo" viewBox="0 0 30 36" aria-hidden="true">
+            <rect x="13" y="2" width="4" height="9" rx="2" fill="#2563EB"/>
+            <path d="M5 13 Q15 8 25 13 L18 30 Q15 34 12 30 Z" fill="#E4002B"/>
+            <path d="M10 15 L20 15 L16 28 L14 28 Z" fill="#fde047"/>
+            <circle cx="15" cy="22" r="3.2" fill="#12b5c4"/>
+          </svg>
+          ¡Brindo por el Techlion, que nos saca de apuros! Si tu pantalla está rota, ¡aquí tienes el mejor presupuesto!
+        </p>
+      </div>
+
+      <label for="marca" class="field-label">👤 Marca</label>
+      <select id="marca" class="select">
+        <option value="">Tu marca…</option>
+      </select>
+
+      <label for="modelo" class="field-label">📱 Modelo</label>
+      <select id="modelo" class="select">
+        <option value="">Tu modelo…</option>
+      </select>
+
+      <span class="field-label">🔽 Pantalla</span>
+      <div id="calidad-options" class="pill-options"></div>
+      <p id="calidad-nota" class="calidad-nota" hidden></p>
+
+      <div class="resultado" id="resultado" hidden>
+        <p class="resultado-titulo">🇨🇱 TU COTIZACIÓN 🇨🇱</p>
+        <div class="resultado-row">
+          <span>Pantalla</span>
+          <span id="precio-pantalla" class="precio-mono">—</span>
+        </div>
+        <div class="resultado-row muted">
+          <span>Instalación</span>
+          <span id="precio-instalacion" class="precio-mono">Consultar</span>
+        </div>
+        <div class="resultado-row total">
+          <span>Total</span>
+          <span id="precio-total" class="precio-mono">—</span>
+        </div>
+        <div class="promo">
+          <span class="promo-tag">🔥 OFERTA</span>
+          <span class="promo-text">Oferta Dieciochera: <strong>5% OFF</strong> + Lámina GRATIS.</span>
+          <div class="promo-precio">Precio hoy (5% dto.): <span id="precio-hoy" class="precio-mono">—</span></div>
+        </div>
+        <p class="urgencia-stock" id="urgencia-stock"></p>
+        <p class="resultado-disclaimer">Precio de stock con instalación incluida. Reparamos en el día y nos quedamos con tu equipo hasta dejarlo perfecto. 🇨🇱</p>
+        <a id="whatsapp-cta" href="#" target="_blank" class="btn btn-primary btn-block">¡QUIERO REPARARLO! 🇨🇱 🎉</a>
+        <p class="social-proof" id="social-proof"></p>
+        <label class="bloqueo"><input type="checkbox" checked> <span>✅ Bloquea tu oferta y lámina GRATIS hoy.</span></label>
+        <p class="cierre">Al reservar hoy fijamos este precio y la lámina de vidrio va incluida.</p>
+      </div>
+
+      <p id="sin-resultados" class="sin-resultados" hidden>No tenemos esa pantalla todavía. Escríbenos y la conseguimos.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer-locs">Reparaciones en Coronel (Bio Bío) y Colina (Santiago), Chile.</p>
+    <p>Los precios provienen de nuestro inventario. Si no ves tu modelo, contáctanos.</p>
+  </div>
+</footer>
+
+  <div class="parallax" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <div id="bg-layer"></div>
+
+  <div class="splash" id="splash">
+    <div class="splash-bg" id="splash-bg">
+      <video id="splash-video" class="splash-video" autoplay muted loop playsinline preload="none"></video>
+    </div>
+    <div class="splash-overlay"></div>
+    <div class="splash-card">
+      <p class="splash-hola">Hola 👋</p>
+      <h2 class="splash-msg" id="splash-msg"></h2>
+        <button class="btn btn-primary splash-btn" id="splash-start" type="button">Quiero repararlo →</button>
+      <button class="splash-skip" id="splash-skip" type="button">Saltar</button>
+    </div>
+  </div>
+
+  <a id="whatsapp-fab" href="#" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.5-.1-1.2-.3-2-.6-1.8-.9-3.4-2.4-4.7-4.3-.5-.7-1-1.5-1-2.3 0-.7.4-1.2.8-1.5.2-.2.5-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 1.9c.1.3.1.5 0 .8l-.4.6c-.2.3-.4.5-.2.9.3.6.9 1.4 1.7 2.1.9.8 1.7 1.3 2.3 1.7.3.2.5.1.7-.1l.7-.9c.2-.3.4-.3.7-.2l1.9.9c.3.1.5.2.6.3.1.4.1.8-.1 1.2z"/></svg>
+  </a>
+
+  <!-- Mascote del logo: camina, te mira y sale corriendo (puro divertimento) -->
+  <div class="mascota" id="mascota" aria-hidden="true">
+    <div class="mascota-inner">
+      <img src="img/techlion-logo.svg" alt="" onerror="this.style.display='none'">
+      <span class="mascota-eye">👀</span>
+    </div>
+  </div>
+
+  <!-- Pista de scroll: si no deslizás en 2s, la manito dice "baja y te atendemos" -->
+  <div class="scroll-hint" id="scroll-hint" aria-hidden="true">
+    <span class="scroll-hand">👇</span>
+    <span class="scroll-text">Baja y te atendemos ↓</span>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

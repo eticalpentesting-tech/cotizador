@@ -1,0 +1,12 @@
+{
+  "name": "techlion-cotizador",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cotizador online de pantallas Techlion (Chile) con admin de precios",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

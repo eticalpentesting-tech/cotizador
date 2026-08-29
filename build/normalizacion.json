@@ -1,0 +1,42 @@
+[
+ [
+  "11.0 / 13.0 / 14.0 / 15.0 / 16.0 / 17.0 (varios iPhone)",
+  "11 / 13 / 14 / 15 / 16 / 17",
+  "Excel auto-convirtió nombres de modelo numéricos a decimales; se normalizó quitando '.0'"
+ ],
+ [
+  "P SMART SL CM (NEGRO $10.000)",
+  "modelo='P SMART SL CM', observación='NEGRO $10.000'",
+  "Precio base $15.000 en columna D es para el color no anotado; el paréntesis es un color alternativo con su propio precio, no un dato adicional del mismo precio"
+ ],
+ [
+  "5S/5SE BLANCO ($4.000) + NEGRO ($8.000) (celdas B7/C7)",
+  "2 filas: {modelo:'5S/5SE', color:'Blanco', precio:4000} y {modelo:'5S/5SE', color:'Negro', precio:8000}",
+  "Único caso (8 modelos de iPhone Incell) donde NO hay precio único en columna D: el precio depende 100% del color, están en dos celdas de texto adyacentes"
+ ],
+ [
+  "SAMSUNG TFT C/L",
+  "SAMSUNG TFT CL",
+  "Se normalizó la barra a texto plano para consistencia con 'CL' usado en otras marcas"
+ ],
+ [
+  "HONOR X5C/X5C PLUS ORI (bajo encabezado 'HUAWEI')",
+  "marca='Huawei', modelo conserva 'HONOR...'",
+  "Honor fue sub-marca de Huawei y hoy es una empresa aparte; el Excel no las separa. Se dejó bajo 'Huawei' pero es una decisión a confirmar contigo"
+ ],
+ [
+  "'HUAWEI' como encabezado en fila 76 (celulares) y otra vez en fila 464 (tablets MatePad)",
+  "tipo_producto distingue: 'celular' vs 'tablet'",
+  "Mismo texto de encabezado reutilizado para dos categorías de producto distintas; si se agrupara solo por texto se mezclarían celulares con tablets"
+ ],
+ [
+  "'TCL' como encabezado en fila 51 (celulares) y otra vez en fila 486 (tablets)",
+  "igual que el caso anterior",
+  "Mismo patrón de reutilización de encabezado para dos tipos de producto"
+ ],
+ [
+  "F496 = 5054 (modelo Alcatel tablet, numérico, sin marca de texto)",
+  "se mantiene como '5054', tipo_producto='tablet'",
+  "Posible código de modelo mal escrito o incompleto; no se puede confirmar sin más contexto"
+ ]
+]

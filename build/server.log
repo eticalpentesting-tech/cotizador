@@ -1,0 +1,834 @@
+::1 - - [27/Aug/2026 23:05:36] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:05:47] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:05:48] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:05:48] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:05:48] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:06:27] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:06:27] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:06:27] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:06:27] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:06:27] code 404, message File not found
+::1 - - [27/Aug/2026 23:06:27] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:11:13] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:11:13] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:13:50] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:13:50] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:13:50] code 404, message File not found
+::1 - - [27/Aug/2026 23:13:50] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:13:50] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:13:50] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:14:08] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:14:08] code 404, message File not found
+::1 - - [27/Aug/2026 23:14:08] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:14:34] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:14:34] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:14:34] code 404, message File not found
+::1 - - [27/Aug/2026 23:14:34] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:14:34] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:14:34] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:14:35] code 404, message File not found
+::1 - - [27/Aug/2026 23:14:35] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:14:38] code 404, message File not found
+::1 - - [27/Aug/2026 23:14:38] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:14:39] "GET / HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:14:39] code 404, message File not found
+::1 - - [27/Aug/2026 23:14:39] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:14:43] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:14:43] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:14:43] code 404, message File not found
+::1 - - [27/Aug/2026 23:14:43] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:14:43] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:14:43] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:14:43] code 404, message File not found
+::1 - - [27/Aug/2026 23:14:43] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:27:29] "GET / HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:27:29] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:27:29] code 404, message File not found
+::1 - - [27/Aug/2026 23:27:29] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:27:29] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:29] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:27:38] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] code 404, message File not found
+::1 - - [27/Aug/2026 23:27:39] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:27:39] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] code 404, message File not found
+::1 - - [27/Aug/2026 23:27:39] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:27:39] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] code 404, message File not found
+::1 - - [27/Aug/2026 23:27:39] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:27:39] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] code 404, message File not found
+::1 - - [27/Aug/2026 23:27:39] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:27:39] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] code 404, message File not found
+::1 - - [27/Aug/2026 23:27:39] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:27:39] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:27:39] code 404, message File not found
+::1 - - [27/Aug/2026 23:27:39] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:40:34] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:40:35] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:40:35] code 404, message File not found
+::1 - - [27/Aug/2026 23:40:35] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:40:35] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:40:35] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:40:35] code 404, message File not found
+::1 - - [27/Aug/2026 23:40:35] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:41:40] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:41:40] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:41:40] code 404, message File not found
+::1 - - [27/Aug/2026 23:41:40] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:41:40] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:41:40] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:41:40] code 404, message File not found
+::1 - - [27/Aug/2026 23:41:40] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:42:47] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:42:47] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:42:47] code 404, message File not found
+::1 - - [27/Aug/2026 23:42:47] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:42:47] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:42:47] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:42:47] code 404, message File not found
+::1 - - [27/Aug/2026 23:42:47] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:44:09] "GET / HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:44:09] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:44:09] code 404, message File not found
+::1 - - [27/Aug/2026 23:44:09] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:44:09] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:44:09] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:44:10] "GET / HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:44:10] code 404, message File not found
+::1 - - [27/Aug/2026 23:44:10] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:44:10] "GET / HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:44:10] code 404, message File not found
+::1 - - [27/Aug/2026 23:44:10] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:44:10] "GET / HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:44:10] code 404, message File not found
+::1 - - [27/Aug/2026 23:44:10] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:44:23] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:44:23] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:44:23] code 404, message File not found
+::1 - - [27/Aug/2026 23:44:23] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:44:23] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:44:23] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:44:23] code 404, message File not found
+::1 - - [27/Aug/2026 23:44:23] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:47:16] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:16] code 404, message File not found
+::1 - - [27/Aug/2026 23:47:16] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:47:16] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:16] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:16] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:17] code 404, message File not found
+::1 - - [27/Aug/2026 23:47:17] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:47:17] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:17] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:17] code 404, message File not found
+::1 - - [27/Aug/2026 23:47:17] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:47:17] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:18] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:19] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:19] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:19] code 404, message File not found
+::1 - - [27/Aug/2026 23:47:19] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:47:19] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:19] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:20] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:20] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:20] code 404, message File not found
+::1 - - [27/Aug/2026 23:47:20] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:47:20] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:47:20] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:08] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:08] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:08] code 404, message File not found
+::1 - - [27/Aug/2026 23:50:08] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:50:08] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:09] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:09] code 404, message File not found
+::1 - - [27/Aug/2026 23:50:09] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:50:10] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:10] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:10] code 404, message File not found
+::1 - - [27/Aug/2026 23:50:10] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:50:10] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:10] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:11] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:11] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:11] code 404, message File not found
+::1 - - [27/Aug/2026 23:50:11] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:50:11] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:11] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:12] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:12] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:12] code 404, message File not found
+::1 - - [27/Aug/2026 23:50:12] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:50:12] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:12] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:14] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:15] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:15] code 404, message File not found
+::1 - - [27/Aug/2026 23:50:15] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:50:15] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:15] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:50:15] code 404, message File not found
+::1 - - [27/Aug/2026 23:50:15] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:56:16] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:56:16] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:56:16] code 404, message File not found
+::1 - - [27/Aug/2026 23:56:16] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:56:16] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:56:16] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:56:17] "GET / HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:56:17] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:56:17] code 404, message File not found
+::1 - - [27/Aug/2026 23:56:17] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:56:17] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:56:20] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [27/Aug/2026 23:56:20] code 404, message File not found
+::1 - - [27/Aug/2026 23:56:20] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/Aug/2026 23:57:57] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [27/Aug/2026 23:57:57] code 404, message File not found
+::1 - - [27/Aug/2026 23:57:57] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:02:41] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:02:41] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:02:41] code 404, message File not found
+::1 - - [28/Aug/2026 00:02:41] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:02:41] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:02:44] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:02:44] code 404, message File not found
+::1 - - [28/Aug/2026 00:02:44] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:03:11] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:11] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:11] code 404, message File not found
+::1 - - [28/Aug/2026 00:03:11] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:03:11] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:11] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:11] code 404, message File not found
+::1 - - [28/Aug/2026 00:03:11] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:03:12] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:12] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:12] code 404, message File not found
+::1 - - [28/Aug/2026 00:03:12] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:03:12] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:12] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:13] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:13] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:13] code 404, message File not found
+::1 - - [28/Aug/2026 00:03:13] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:03:13] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:13] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:14] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:14] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:14] code 404, message File not found
+::1 - - [28/Aug/2026 00:03:14] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:03:14] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:14] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:16] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:17] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:17] code 404, message File not found
+::1 - - [28/Aug/2026 00:03:17] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:03:17] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:17] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:17] code 404, message File not found
+::1 - - [28/Aug/2026 00:03:17] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:03:20] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:20] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:20] code 404, message File not found
+::1 - - [28/Aug/2026 00:03:20] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:03:20] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:20] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:03:20] code 404, message File not found
+::1 - - [28/Aug/2026 00:03:20] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:06:49] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:06:49] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:06:49] code 404, message File not found
+::1 - - [28/Aug/2026 00:06:49] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:06:49] "GET /js/app.js HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:06:49] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:06:49] code 404, message File not found
+::1 - - [28/Aug/2026 00:06:49] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:06:58] code 404, message File not found
+::1 - - [28/Aug/2026 00:06:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:10:25] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:10:25] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:10:25] code 404, message File not found
+::1 - - [28/Aug/2026 00:10:25] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:10:25] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:10:25] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:10:25] code 404, message File not found
+::1 - - [28/Aug/2026 00:10:25] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:10:28] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:10:28] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:10:28] code 404, message File not found
+::1 - - [28/Aug/2026 00:10:28] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:10:28] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:10:28] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:10:28] code 404, message File not found
+::1 - - [28/Aug/2026 00:10:28] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:12:25] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:12:25] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:12:25] code 404, message File not found
+::1 - - [28/Aug/2026 00:12:25] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:12:25] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:12:28] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:12:28] code 404, message File not found
+::1 - - [28/Aug/2026 00:12:28] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:13:35] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:13:35] code 404, message File not found
+::1 - - [28/Aug/2026 00:13:35] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:13:35] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:13:35] code 404, message File not found
+::1 - - [28/Aug/2026 00:13:35] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:13:35] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:13:35] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:13:38] code 404, message File not found
+::1 - - [28/Aug/2026 00:13:38] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:13:38] code 404, message File not found
+::1 - - [28/Aug/2026 00:13:38] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:13:43] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:13:43] code 404, message File not found
+::1 - - [28/Aug/2026 00:13:43] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:13:43] code 404, message File not found
+::1 - - [28/Aug/2026 00:13:43] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:14:53] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:14:53] code 404, message File not found
+::1 - - [28/Aug/2026 00:14:53] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:18:37] code 404, message File not found
+::1 - - [28/Aug/2026 00:18:37] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:20:19] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:20:19] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:20:19] code 404, message File not found
+::1 - - [28/Aug/2026 00:20:19] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:20:19] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:20:19] code 404, message File not found
+::1 - - [28/Aug/2026 00:20:19] "GET /css/img/background.jpg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:20:20] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:20:20] code 404, message File not found
+::1 - - [28/Aug/2026 00:20:20] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:21:17] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:21:17] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:21:17] code 404, message File not found
+::1 - - [28/Aug/2026 00:21:17] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:21:17] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:21:17] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:21:17] code 404, message File not found
+::1 - - [28/Aug/2026 00:21:17] "GET /css/img/background.jpg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:21:19] code 404, message File not found
+::1 - - [28/Aug/2026 00:21:19] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:26:19] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:26:19] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:26:19] code 404, message File not found
+::1 - - [28/Aug/2026 00:26:19] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:26:19] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:26:19] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:26:19] code 404, message File not found
+::1 - - [28/Aug/2026 00:26:19] "GET /css/img/background.jpg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:26:32] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:26:32] code 404, message File not found
+::1 - - [28/Aug/2026 00:26:32] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:26:32] code 404, message File not found
+::1 - - [28/Aug/2026 00:26:32] "GET /css/img/background.jpg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:26:34] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:26:34] code 404, message File not found
+::1 - - [28/Aug/2026 00:26:34] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:26:34] code 404, message File not found
+::1 - - [28/Aug/2026 00:26:34] "GET /css/img/background.jpg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:31:06] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:31:06] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:31:06] code 404, message File not found
+::1 - - [28/Aug/2026 00:31:06] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:31:06] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:31:06] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:31:06] code 404, message File not found
+::1 - - [28/Aug/2026 00:31:06] "GET /css/img/background.jpg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:31:08] code 404, message File not found
+::1 - - [28/Aug/2026 00:31:08] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:34:14] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:34:14] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:34:14] code 404, message File not found
+::1 - - [28/Aug/2026 00:34:14] "GET /img/techlion-logo.png HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:34:14] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:34:14] code 404, message File not found
+::1 - - [28/Aug/2026 00:34:14] "GET /css/img/background.jpg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:34:14] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:34:14] code 404, message File not found
+::1 - - [28/Aug/2026 00:34:14] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:37:24] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:24] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:24] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:24] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:24] code 404, message File not found
+::1 - - [28/Aug/2026 00:37:24] "GET /css/img/background.svg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:37:24] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:24] "GET /img/splash.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:24] "GET /img/favicon.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:52] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:52] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:52] "GET /img/favicon.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:52] "GET /img/splash.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:52] code 404, message File not found
+::1 - - [28/Aug/2026 00:37:52] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:37:52] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:52] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:37:52] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:38:44] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:38:44] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:38:44] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:38:44] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:38:44] code 404, message File not found
+::1 - - [28/Aug/2026 00:38:44] "GET /css/img/background.svg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:38:44] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:38:44] "GET /img/splash.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:27] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:27] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:28] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:28] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:28] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:28] code 404, message File not found
+::1 - - [28/Aug/2026 00:39:28] "GET /css/img/background.svg HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:39:28] "GET /img/splash.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:49] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:49] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:49] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:49] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:49] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:49] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:39:49] "GET /img/splash.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:41:04] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:41:04] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:41:04] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:41:04] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:41:04] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:41:04] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:44:15] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:44:15] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:44:15] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:44:15] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:44:15] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:44:15] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:44:15] "GET /img/splash.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:46:27] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:46:27] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:46:27] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:46:27] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:46:27] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:46:27] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:46:31] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:46:35] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:46:38] code 404, message File not found
+::1 - - [28/Aug/2026 00:46:38] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:51:21] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:51:21] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:51:21] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:51:21] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:51:21] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:51:21] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:51:21] "GET /img/splash.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:52:24] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:52:24] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:52:24] "GET /img/techlion-logo.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:52:24] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 00:52:24] code 404, message File not found
+::1 - - [28/Aug/2026 00:52:24] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:52:24] "GET /img/background.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:55:11] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:55:11] code 404, message File not found
+::1 - - [28/Aug/2026 00:55:11] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:55:11] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:55:11] "GET /img/techlion-logo.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:55:11] "GET /js/app.js HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:55:11] "GET /img/background.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:55:44] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 00:55:44] code 404, message File not found
+::1 - - [28/Aug/2026 00:55:44] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 00:55:44] "GET /js/app.js HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:02:02] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:02:03] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:02:03] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:02:03] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:02:03] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:02:03] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:02:03] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:05] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:05] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:05] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:05] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:06] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:06] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:06] code 404, message File not found
+::1 - - [28/Aug/2026 01:06:06] "GET /img/bandera.gif HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 01:06:06] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:45] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:45] code 404, message File not found
+::1 - - [28/Aug/2026 01:06:45] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 01:06:45] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:45] "GET /img/techlion-logo.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:06:45] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:45] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:06:45] "GET /img/background.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:06:47] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:47] code 404, message File not found
+::1 - - [28/Aug/2026 01:06:47] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 01:06:47] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:47] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:47] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:47] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:47] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:06:51] code 404, message File not found
+::1 - - [28/Aug/2026 01:06:51] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 01:08:14] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:08:14] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:08:14] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:08:14] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:08:14] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:08:14] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:08:14] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:08:14] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:20:22] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:20:22] code 404, message File not found
+::1 - - [28/Aug/2026 01:20:22] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 01:20:22] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:20:22] "GET /img/techlion-logo.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:20:22] "GET /js/app.js HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:20:22] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:20:22] "GET /img/background.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:20:23] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:20:23] code 404, message File not found
+::1 - - [28/Aug/2026 01:20:23] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 01:21:43] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:21:43] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:21:43] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:21:43] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:21:43] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:21:43] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:21:43] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:21:43] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:41:40] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:41:40] code 404, message File not found
+::1 - - [28/Aug/2026 01:41:40] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 01:41:40] "GET /img/techlion-logo.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:41:40] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:41:40] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 01:41:40] "GET /img/background.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:41:40] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:41:40] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:41:41] code 404, message File not found
+::1 - - [28/Aug/2026 01:41:41] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 01:41:41] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 01:41:41] code 404, message File not found
+::1 - - [28/Aug/2026 01:41:41] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 09:12:29] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:15:12] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:15:12] code 404, message File not found
+::1 - - [28/Aug/2026 09:15:12] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 09:15:12] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:15:12] "GET /img/techlion-logo.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:15:12] "GET /js/app.js HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:15:13] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:15:13] "GET /img/background.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:16:15] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:16:37] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:16:37] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:16:37] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:16:37] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:16:38] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:16:38] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:16:38] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:16:39] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:16:40] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:17:58] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:17:58] code 404, message File not found
+::1 - - [28/Aug/2026 09:17:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 09:18:02] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:18:03] code 404, message File not found
+::1 - - [28/Aug/2026 09:18:03] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 09:32:51] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:02] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:02] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:03] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:03] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:03] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:03] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:03] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:03] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:50] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:51] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:51] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:51] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:52] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:52] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:52] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:33:52] "GET /img/bandera.svg HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('::1', 64531, 0, 0)
+Traceback (most recent call last):
+  File "C:\Users\vixo\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vixo\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 1422, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vixo\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 732, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\vixo\AppData\Local\Python\pythoncore-3.14-64\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\vixo\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\vixo\AppData\Local\Python\pythoncore-3.14-64\Lib\http\server.py", line 464, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\vixo\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+----------------------------------------
+::1 - - [28/Aug/2026 09:35:44] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:35:44] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:35:44] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:35:44] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:35:45] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:35:45] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:35:45] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:35:45] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:36:12] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:36:12] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:36:12] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:36:13] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:36:13] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:36:13] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:36:13] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:36:13] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:36:15] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:46:58] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:46:59] code 404, message File not found
+::1 - - [28/Aug/2026 09:46:59] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 09:46:59] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:46:59] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:46:59] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:46:59] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:46:59] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:46:59] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:46:59] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:47:06] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 09:47:07] code 404, message File not found
+::1 - - [28/Aug/2026 09:47:07] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 09:49:50] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:49:50] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:49:50] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:49:50] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:49:52] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:49:52] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:49:53] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:49:53] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:56:26] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:56:26] code 404, message File not found
+::1 - - [28/Aug/2026 09:56:26] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 09:56:26] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:56:26] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:56:26] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:56:27] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:56:27] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:56:27] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:56:27] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:59:13] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:59:14] code 404, message File not found
+::1 - - [28/Aug/2026 09:59:14] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 09:59:14] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:59:14] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:59:14] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:59:14] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:59:14] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:59:15] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 09:59:15] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 15:31:37] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 15:31:37] code 404, message File not found
+::1 - - [28/Aug/2026 15:31:37] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 15:31:37] "GET /img/techlion-logo.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 15:31:37] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 15:31:37] "GET /js/app.js HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 15:31:37] "GET /img/background.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 15:31:37] "GET /data/pantallas.json HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 15:31:37] "GET /img/bandera.gif HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 15:31:37] "GET /img/bandera.svg HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 15:36:21] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 15:37:06] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 15:37:06] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 15:37:06] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 15:37:06] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 15:37:06] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 15:37:06] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 15:37:06] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 15:37:06] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:07:10] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:07:10] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:07:10] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:07:10] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:07:10] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:07:10] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:07:10] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:07:10] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:14] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:14] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:14] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:14] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:14] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:15] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:15] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:15] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:49] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:49] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:49] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:49] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:49] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:49] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:49] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:24:49] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:13] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:13] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:13] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:13] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:13] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:13] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:13] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:13] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:51] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:51] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:51] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:51] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:51] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:51] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:51] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:37:51] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:41:28] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:41:28] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:41:28] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:41:28] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:41:28] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:41:28] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:41:28] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:41:28] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:45:07] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:45:07] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:45:07] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:45:07] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:45:07] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:45:08] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:45:08] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 16:45:08] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:15:33] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:15:58] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:15:58] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:15:58] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:15:58] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:16:00] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:16:01] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:16:01] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:16:01] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:29:31] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:29:31] code 404, message File not found
+::1 - - [28/Aug/2026 17:29:31] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 17:29:31] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:29:31] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:29:31] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:29:31] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:29:31] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:29:31] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:29:31] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:34:02] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:34:02] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:34:02] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:34:02] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:34:02] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:34:02] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:34:02] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 17:34:02] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 18:54:42] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 18:54:42] code 404, message File not found
+::1 - - [28/Aug/2026 18:54:42] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 18:54:42] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 18:54:42] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 18:54:42] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 18:54:42] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 18:54:42] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 18:54:42] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 18:54:42] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:00:56] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:00:56] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:00:56] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:00:56] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:00:56] code 404, message File not found
+::1 - - [28/Aug/2026 19:00:56] "GET /img/splash-video.mp4 HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 19:00:56] code 404, message File not found
+::1 - - [28/Aug/2026 19:00:56] "GET /img/splash-video.webm HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 19:00:56] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:00:56] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:00:56] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:00:56] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:01:34] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:01:34] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:01:34] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:01:34] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:01:34] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:01:34] code 404, message File not found
+::1 - - [28/Aug/2026 19:01:34] "HEAD /img/splash-video.mp4 HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 19:01:34] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:01:34] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:01:34] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:01:34] code 404, message File not found
+::1 - - [28/Aug/2026 19:01:34] "HEAD /img/splash-video.webm HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 19:02:17] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:02:17] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:02:17] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:02:17] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:02:18] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:02:18] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:02:18] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:02:18] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:25:13] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:25:13] code 404, message File not found
+::1 - - [28/Aug/2026 19:25:13] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 19:25:13] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:25:13] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:25:13] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:25:13] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:25:13] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:25:13] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 19:25:13] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 20:23:14] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 20:23:25] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 20:23:25] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 20:23:25] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 20:23:25] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 20:23:26] "GET /data/pantallas.json HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 20:23:26] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 20:23:26] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 20:23:26] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 21:09:21] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 21:09:21] "GET /css/style.css HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 21:09:21] "GET /js/app.js HTTP/1.1" 304 -
+::1 - - [28/Aug/2026 21:40:48] code 501, message Unsupported method ('POST')
+::1 - - [28/Aug/2026 21:40:48] "POST /api/login HTTP/1.1" 501 -
+::1 - - [28/Aug/2026 21:40:48] code 501, message Unsupported method ('POST')
+::1 - - [28/Aug/2026 21:40:48] "POST /api/login HTTP/1.1" 501 -
+::1 - - [28/Aug/2026 21:40:48] code 404, message File not found
+::1 - - [28/Aug/2026 21:40:48] "GET /api/productos HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 21:40:48] code 501, message Unsupported method ('POST')
+::1 - - [28/Aug/2026 21:40:48] "POST /api/productos HTTP/1.1" 501 -
+::1 - - [28/Aug/2026 21:40:48] code 404, message File not found
+::1 - - [28/Aug/2026 21:40:48] "GET /api/productos HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 21:49:50] "GET / HTTP/1.1" 200 -
+::1 - - [28/Aug/2026 21:49:50] code 404, message File not found
+::1 - - [28/Aug/2026 21:49:50] "GET /config HTTP/1.1" 404 -
+::1 - - [28/Aug/2026 21:49:50] code 404, message File not found
+::1 - - [28/Aug/2026 21:49:50] "GET /health HTTP/1.1" 404 -
