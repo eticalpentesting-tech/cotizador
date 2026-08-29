@@ -832,3 +832,14 @@ ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una cone
 ::1 - - [28/Aug/2026 21:49:50] "GET /config HTTP/1.1" 404 -
 ::1 - - [28/Aug/2026 21:49:50] code 404, message File not found
 ::1 - - [28/Aug/2026 21:49:50] "GET /health HTTP/1.1" 404 -
+::1 - - [29/Aug/2026 09:25:45] "GET / HTTP/1.1" 200 -
+::1 - - [29/Aug/2026 09:25:45] "GET /css/style.css HTTP/1.1" 200 -
+::1 - - [29/Aug/2026 09:25:45] "GET /img/techlion-logo.svg HTTP/1.1" 200 -
+::1 - - [29/Aug/2026 09:25:45] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [29/Aug/2026 09:25:46] "GET /img/background.svg HTTP/1.1" 200 -
+::1 - - [29/Aug/2026 09:25:46] code 404, message File not found
+::1 - - [29/Aug/2026 09:25:46] "GET /api/productos HTTP/1.1" 404 -
+::1 - - [29/Aug/2026 09:25:46] "GET /img/bandera.gif HTTP/1.1" 200 -
+::1 - - [29/Aug/2026 09:25:46] "GET /img/bandera.svg HTTP/1.1" 200 -
+::1 - - [29/Aug/2026 09:25:56] code 404, message File not found
+::1 - - [29/Aug/2026 09:25:56] "GET /api/productos HTTP/1.1" 404 -

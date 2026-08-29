@@ -5,6 +5,19 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
+// Carga .env local (solo dev). En producción Render inyecta las env vars reales;
+// NO commiteamos .env (está en .gitignore). Sin dependencias externas.
+try {
+  const envSrc = fs.readFileSync(path.join(__dirname, '.env'), 'utf-8');
+  for (const line of envSrc.split('\n')) {
+    const m = line.match(/^\s*([\w.-]+)\s*=\s*(.*)\s*$/);
+    if (!m) continue;
+    const k = m[1];
+    const v = m[2].replace(/^["']|["']$/g, '');
+    if (process.env[k] === undefined) process.env[k] = v;
+  }
+} catch (e) { /* sin .env local: ok */ }
+
 const ROOT = path.join(__dirname, 'build');
 const DATA = path.join(ROOT, 'data', 'pantallas.json');
 const ADMIN_PASS = process.env.ADMIN_PASS || 'techlion123';
@@ -48,7 +61,7 @@ function parseCookies(req) {
 }
 function isAuthed(req) {
   const c = parseCookies(req);
-  return c.admin && sessions.has(c.admin);
+  return !!(c.admin && sessions.has(c.admin));
 }
 function readBody(req) {
   return new Promise((resolve, reject) => {

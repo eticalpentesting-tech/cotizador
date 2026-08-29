@@ -1,0 +1,8 @@
+# NUNCA commitees .env: contiene secretos (ADMIN_PASS, tokens).
+.env
+
+# Dependencias (si alguna vez se agregan)
+node_modules/
+
+# Logs
+*.log
