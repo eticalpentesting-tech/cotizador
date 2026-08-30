@@ -59,19 +59,40 @@ const el = {
   sinResultados: document.getElementById("sin-resultados"),
   ultimaCotizacion: document.getElementById("ultima-cotizacion"),
   socialProof: document.getElementById("social-proof"),
+  cardLoading: document.getElementById("card-loading"),
+  cotizadorForm: document.getElementById("cotizador-form"),
+  catalogError: document.getElementById("catalog-error"),
+  btnReintentar: document.getElementById("btn-reintentar"),
 };
+
+// Carga el catálogo con doble origen:
+// 1) /api/productos -> si hay backend Node (Render), usa el catálogo vivo (precios editados en /admin).
+// 2) data/pantallas.json -> modo 100% estático (Surge): catálogo embebido como archivo.
+async function cargarCatalogo() {
+  try {
+    const res = await fetch("/api/productos");
+    if (res.ok) return await res.json();
+  } catch (e) { /* sin backend: caemos al JSON estático */ }
+  const res = await fetch("data/pantallas.json");
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  return await res.json();
+}
 
 async function init() {
   try {
-    const res = await fetch("/api/productos");
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    CATALOGO = await res.json();
+    CATALOGO = await cargarCatalogo();
   } catch (err) {
-    el.sinResultados.hidden = false;
-    el.sinResultados.textContent = "No pudimos cargar el catálogo de pantallas. Asegurate de abrir el sitio por el servidor (node server.js -> http://localhost:8000) o la versión en línea.";
     console.error("Catálogo no cargó:", err);
+    el.cardLoading.hidden = true;
+    el.catalogError.hidden = false;
+    el.btnReintentar.hidden = false;
+    el.cotizadorForm.hidden = true;
     return;
   }
+
+  el.cardLoading.hidden = true;
+  el.cotizadorForm.hidden = false;
+  document.getElementById("cotizador").setAttribute("aria-busy", "false");
 
   for (const p of CATALOGO.productos) {
     if (!productosPorMarca.has(p.marca)) productosPorMarca.set(p.marca, []);
@@ -98,6 +119,16 @@ async function init() {
   el.modelo.addEventListener("change", onModeloChange);
 
   initTracking();
+}
+
+// Reintentar la carga del catálogo si falló la primera vez.
+if (el.btnReintentar) {
+  el.btnReintentar.addEventListener("click", () => {
+    el.catalogError.hidden = true;
+    el.btnReintentar.hidden = true;
+    el.cardLoading.hidden = false;
+    init();
+  });
 }
 
 function resetFrom() {
@@ -261,6 +292,10 @@ const SPLASH_MESSAGES = [
 function initSplash() {
   const splash = document.getElementById("splash");
   if (!splash) return;
+  // Ya lo vio en esta sesión -> salta directo al sitio (no molesta al que vuelve).
+  let visto = false;
+  try { visto = sessionStorage.getItem("techlion_splash_visto") === "1"; } catch (e) {}
+  if (visto) { splash.classList.add("hidden"); return; }
   const bg = document.getElementById("splash-bg");
   const msg = document.getElementById("splash-msg");
   // Intro: bandera del cliente (bandera.gif). Fallback a la bandera SVG de Chile si falta el archivo.
@@ -305,6 +340,7 @@ function initSplash() {
     if (typeTimer) clearTimeout(typeTimer);
     msg.classList.remove("typing");
     splash.classList.add("hidden");
+    try { sessionStorage.setItem("techlion_splash_visto", "1"); } catch (e) {}
   };
   autoTimer = setTimeout(close, 7000); // pasa solo al home luego de 7s
   document.getElementById("splash-start").addEventListener("click", () => {

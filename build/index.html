@@ -32,10 +32,16 @@
         </ol>
       </div>
 
-      <div class="cotizador-card" id="cotizador">
+      <div class="cotizador-card" id="cotizador" aria-busy="true">
         <p class="eyebrow card-eyebrow">Reparación</p>
 
         <p class="ultima-cotizacion" id="ultima-cotizacion" hidden></p>
+
+        <div class="card-loading" id="card-loading" aria-hidden="true">
+          <div class="sk sk-field"></div>
+          <div class="sk sk-field"></div>
+          <div class="sk sk-pills"></div>
+        </div>
 
         <div class="destacado">
         <div class="bunting" aria-hidden="true">
@@ -51,6 +57,8 @@
           ¡Brindo por el Techlion, que nos saca de apuros! Si tu pantalla está rota, ¡aquí tienes el mejor presupuesto!
         </p>
       </div>
+
+      <div class="cotizador-form" id="cotizador-form" hidden>
 
       <label for="marca" class="field-label">👤 Marca</label>
       <select id="marca" class="select">
@@ -94,6 +102,9 @@
       </div>
 
       <p id="sin-resultados" class="sin-resultados" hidden>No tenemos esa pantalla todavía. Escríbenos y la conseguimos.</p>
+      <p id="catalog-error" class="sin-resultados" hidden>No pudimos cargar el catálogo de pantallas.</p>
+      <button type="button" class="btn btn-retry" id="btn-reintentar" hidden>↺ Reintentar</button>
+    </div>
     </div>
   </div>
 </section>

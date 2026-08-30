@@ -6,3 +6,6 @@ node_modules/
 
 # Logs
 *.log
+
+# Cookies de sesión local (nunca a un repo público: pueden contener tokens)
+cookies.txt
