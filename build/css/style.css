@@ -589,19 +589,26 @@ h1,h2{
 @media (prefers-reduced-motion: reduce){ .splash-bg{ animation:none; } }
 .splash-overlay{
   position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(10,12,16,.35), rgba(10,12,16,.6));
+  background:linear-gradient(180deg, rgba(10,12,16,.62), rgba(10,12,16,.78));
 }
 .splash-card{
   position:relative; z-index:1;
-  text-align:center; max-width:520px;
+  text-align:center; max-width:560px;
   color:#fff;
+  background:rgba(10,12,16,.45);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:20px;
+  padding:36px 32px 30px;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  box-shadow:0 24px 60px -20px rgba(0,0,0,.6);
   animation:fadeUp .6s ease;
 }
-.splash-hola{ font-size:40px; margin:0 0 8px; text-shadow:0 2px 14px rgba(0,0,0,.55); }
+.splash-hola{ font-size:40px; margin:0 0 8px; text-shadow:0 2px 18px rgba(0,0,0,.7); }
 .splash-msg{
   font-family:'Space Grotesk', sans-serif; font-weight:700;
   font-size:30px; line-height:1.15; margin:0 0 26px;
-  text-shadow:0 2px 14px rgba(0,0,0,.55);
+  text-shadow:0 2px 18px rgba(0,0,0,.7);
 }
 .splash-msg.typing::after{
   content:"▋";
@@ -614,7 +621,8 @@ h1,h2{
   display:inline-block; margin:16px auto 0;
   padding:10px 24px; min-height:44px;
   background:none; border:none; cursor:pointer;
-  color:rgba(255,255,255,.75); font-size:14px; text-decoration:underline;
+  color:#fff; font-size:14px; text-decoration:underline;
+  text-shadow:0 1px 8px rgba(0,0,0,.8);
   border-radius:10px;
 }
 .splash-skip:hover{ color:#fff; }
