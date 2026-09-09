@@ -60,6 +60,16 @@
 
       <div class="cotizador-form" id="cotizador-form" hidden>
 
+      <div class="modo" id="modo" role="tablist" aria-label="Qué necesitas">
+        <button type="button" id="modo-btn-reparar" class="modo-btn on" role="tab" aria-selected="true">
+          🔧 Reparación <small>instalación incluida</small>
+        </button>
+        <button type="button" id="modo-btn-sola" class="modo-btn" role="tab" aria-selected="false">
+          📦 Solo pantalla <small>sin instalación</small>
+        </button>
+      </div>
+      <p class="modo-hint" id="modo-hint">Abonás el 50% al agendar y lo reparamos en el día.</p>
+
       <label for="marca" class="field-label">👤 Marca</label>
       <select id="marca" class="select">
         <option value="">Tu marca…</option>
@@ -75,12 +85,12 @@
       <p id="calidad-nota" class="calidad-nota" hidden></p>
 
       <div class="resultado" id="resultado" hidden>
-        <p class="resultado-titulo">🇨🇱 TU COTIZACIÓN 🇨🇱</p>
+        <p class="resultado-titulo" id="resultado-titulo">🇨🇱 TU COTIZACIÓN 🇨🇱</p>
         <div class="resultado-row">
           <span>Pantalla</span>
           <span id="precio-pantalla" class="precio-mono">—</span>
         </div>
-        <div class="resultado-row muted">
+        <div class="resultado-row muted" id="inst-row">
           <span>Instalación</span>
           <span id="precio-instalacion" class="precio-mono">Consultar</span>
         </div>
@@ -88,23 +98,42 @@
           <span>Total</span>
           <span id="precio-total" class="precio-mono">—</span>
         </div>
-        <div class="promo">
+        <div class="promo" id="promo">
           <span class="promo-tag">🔥 OFERTA</span>
           <span class="promo-text">Oferta Dieciochera: <strong>5% OFF</strong> + Lámina GRATIS.</span>
           <div class="promo-precio">Precio hoy (5% dto.): <span id="precio-hoy" class="precio-mono">—</span></div>
         </div>
         <p class="urgencia-stock" id="urgencia-stock"></p>
-        <p class="resultado-disclaimer">Precio de stock con instalación incluida. Reparamos en el día y nos quedamos con tu equipo hasta dejarlo perfecto. 🇨🇱</p>
+        <p class="resultado-disclaimer" id="disclaimer">Precio de stock con instalación incluida. Reparamos en el día y nos quedamos con tu equipo hasta dejarlo perfecto. 🇨🇱</p>
+        <p class="garantia-nota" id="garantia-nota" hidden></p>
+        <p class="abono-note" id="abono-nota">💳 Los trabajos de reparación llevan un <strong>abono inicial del 50%</strong> al momento de agendar.</p>
         <a id="whatsapp-cta" href="#" target="_blank" class="btn btn-primary btn-block">¡QUIERO REPARARLO! 🇨🇱 🎉</a>
         <p class="social-proof" id="social-proof"></p>
-        <label class="bloqueo"><input type="checkbox" checked> <span>✅ Bloquea tu oferta y lámina GRATIS hoy.</span></label>
-        <p class="cierre">Al reservar hoy fijamos este precio y la lámina de vidrio va incluida.</p>
+        <label class="bloqueo" id="bloqueo"><input type="checkbox" checked> <span>✅ Bloquea tu oferta y lámina GRATIS hoy.</span></label>
+        <p class="cierre" id="cierre">Al reservar hoy fijamos este precio y la lámina de vidrio va incluida.</p>
       </div>
 
       <p id="sin-resultados" class="sin-resultados" hidden>No tenemos esa pantalla todavía. Escríbenos y la conseguimos.</p>
       <p id="catalog-error" class="sin-resultados" hidden>No pudimos cargar el catálogo de pantallas.</p>
       <button type="button" class="btn btn-retry" id="btn-reintentar" hidden>↺ Reintentar</button>
     </div>
+    </div>
+  </div>
+</section>
+
+<section class="condiciones">
+  <div class="wrap condiciones-inner">
+    <div class="condicion">
+      <span class="cond-ico" aria-hidden="true">💰</span>
+      <p>Los trabajos de reparación llevan un <strong>abono inicial del 50%</strong> al momento de agendar.</p>
+    </div>
+    <div class="condicion">
+      <span class="cond-ico" aria-hidden="true">🛡️</span>
+      <p>Solo las pantallas <strong>ORIGINALES u OLED</strong> tienen <strong>garantía de 1 mes</strong> al momento de la compra instalada.</p>
+    </div>
+    <div class="condicion">
+      <span class="cond-ico" aria-hidden="true">⚠️</span>
+      <p>La pantalla <strong>genérica AAA no tiene garantía</strong>.</p>
     </div>
   </div>
 </section>

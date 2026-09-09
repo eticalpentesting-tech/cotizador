@@ -17,6 +17,7 @@
 }
 
 *{box-sizing:border-box;}
+[hidden]{display:none !important;}
 html{scroll-behavior:smooth;}
 
 /* Franja patriota (azul · blanco · rojo) */
@@ -545,7 +546,7 @@ h1,h2{
 #bg-layer{
   position:fixed; inset:-24px; z-index:-1;
   background-color:#fbf6ec;
-  background-image:url("img/background.svg");
+  background-image:url("../img/background.svg");
   background-size:160px 160px;
   background-repeat:repeat;
   opacity:0.14;
@@ -703,4 +704,65 @@ h1,h2{
 .social-proof{
   text-align:center; font-size:13px; color:var(--text-muted);
   margin:10px 0 0; font-family:'IBM Plex Mono', monospace; letter-spacing:.02em;
+}
+
+/* Selector de modo: Reparación vs Solo pantalla */
+.modo{
+  display:grid; grid-template-columns:1fr 1fr; gap:6px;
+  background:var(--surface-2); border:1px solid var(--border);
+  padding:5px; border-radius:13px; margin-top:6px;
+}
+.modo-btn{
+  border:none; background:transparent; border-radius:9px;
+  padding:11px 8px; min-height:54px; cursor:pointer;
+  font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:14px;
+  color:var(--text-muted); line-height:1.15;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+  transition:background .12s ease, color .12s ease, box-shadow .12s ease;
+}
+.modo-btn small{
+  font-family:'Inter', sans-serif; font-weight:500; font-size:11px;
+  color:inherit; opacity:.85;
+}
+.modo-btn.on{
+  background:var(--turquoise); color:#fff;
+  box-shadow:0 4px 12px -4px rgba(18,181,196,.5);
+}
+.modo-btn:focus-visible{ outline:2px solid var(--turquoise); outline-offset:2px; }
+.modo-hint{ font-size:13px; color:var(--text-muted); margin:10px 0 0; }
+
+/* Nota de garantía + abono dentro del resultado */
+.garantia-nota{
+  margin-top:10px; padding:10px 12px; border-radius:8px;
+  border-left:3px solid var(--turquoise); font-size:13px; color:var(--text);
+  background:rgba(18,181,196,0.08);
+}
+.garantia-nota.no{
+  border-color:var(--chile-red); background:rgba(228,0,43,0.06);
+}
+.abono-note{
+  margin-top:12px; padding:9px 12px; font-size:13px; color:var(--text);
+  background:#fff4e0; border:1px solid #eed9a9; border-left:3px solid var(--warn);
+  border-radius:8px;
+}
+
+/* Condiciones que el dueño quiere visibles en el home */
+.condiciones{
+  border-top:1px solid var(--border);
+  background:rgba(251,246,236,0.6);
+  padding:34px 0;
+}
+.condiciones-inner{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+}
+.condicion{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:14px; padding:16px; display:flex; gap:12px; align-items:flex-start;
+  box-shadow:0 6px 18px -14px rgba(0,0,0,.3);
+}
+.cond-ico{ font-size:24px; line-height:1; }
+.condicion p{ margin:0; font-size:14px; color:var(--text); }
+.condicion strong{ color:var(--chile-red); }
+@media (max-width: 900px){
+  .condiciones-inner{ grid-template-columns:1fr; }
 }

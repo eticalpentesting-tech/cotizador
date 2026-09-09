@@ -110,12 +110,19 @@ async function loadCatalog() {
   if (fromRedis && Array.isArray(fromRedis.productos)) {
     CATALOG = fromRedis;
     console.log('Catálogo cargado desde Redis.');
-    return;
+  } else {
+    // Fallback: archivo local (dev, o primera vez en producción).
+    CATALOG = JSON.parse(fs.readFileSync(DATA, 'utf-8'));
+    if (REDIS_URL && REDIS_TOKEN) await redisSet(CATALOG); // sembramos Redis
+    console.log('Catálogo cargado desde archivo local.');
   }
-  // Fallback: archivo local (dev, o primera vez en producción).
-  CATALOG = JSON.parse(fs.readFileSync(DATA, 'utf-8'));
-  if (REDIS_URL && REDIS_TOKEN) await redisSet(CATALOG); // sembramos Redis
-  console.log('Catálogo cargado desde archivo local.');
+  // Si el catálogo vivo aún no tiene la comisión "solo pantalla" (catálogo viejo),
+  // le ponemos el default y lo persistimos para que el público ya la use.
+  if (!Number.isFinite(Number(CATALOG.comision_sola))) {
+    CATALOG.comision_sola = 15000;
+    await persistCatalog(CATALOG);
+    console.log('Catálogo: comision_sola inicializada en 15000.');
+  }
 }
 async function persistCatalog(catalog) {
   CATALOG = catalog;
@@ -174,8 +181,9 @@ const server = http.createServer(async (req, res) => {
         if (np.margen != null && Number.isFinite(Number(np.margen))) p.margen = Number(np.margen);
       }
       if (Number.isFinite(Number(body.margen))) CATALOG.margen = Number(body.margen);
+      if (Number.isFinite(Number(body.comision_sola))) CATALOG.comision_sola = Number(body.comision_sola);
       await persistCatalog(CATALOG);
-      send(res, 200, { ok: true, margen: CATALOG.margen, total: CATALOG.productos.length, persisted: !!(REDIS_URL && REDIS_TOKEN) });
+      send(res, 200, { ok: true, margen: CATALOG.margen, comision_sola: CATALOG.comision_sola, total: CATALOG.productos.length, persisted: !!(REDIS_URL && REDIS_TOKEN) });
     } catch (e) { send(res, 500, { error: String(e.message || e) }); }
     return;
   }

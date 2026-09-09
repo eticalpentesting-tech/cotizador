@@ -24,6 +24,8 @@
   }
   header h1{font-size:20px; margin:0; flex:1}
   header .pill{background:rgba(255,255,255,.2); padding:5px 12px; border-radius:999px; font-size:14px; white-space:nowrap}
+  /* En escritorio el Guardar del header no hace falta (hay botón junto a los filtros) */
+  #saveTopBtn{display:none}
   button{
     cursor:pointer; border:none; border-radius:12px; padding:13px 20px; font-weight:800;
     background:var(--azul); color:#fff; font-size:17px; min-height:48px;
@@ -124,7 +126,9 @@
     body{font-size:17px}
     header{padding:12px 14px}
     header h1{font-size:17px}
-    header .pill{font-size:13px}
+    header .pill{font-size:13px; display:none}
+    #saveTopBtn{display:inline-flex}
+    header button{min-height:44px; padding:8px 14px; font-size:14px; white-space:nowrap}
     .wrap{padding:12px 12px 90px}
     #login.wrap{padding-bottom:20px}
     .card{padding:14px; border-radius:14px; margin-bottom:14px}
@@ -171,6 +175,7 @@
   <header>
     <h1>Techlion · Precios</h1>
     <span class="pill" id="countPill">0 productos</span>
+    <button class="ghost" id="saveTopBtn" title="Guardar cambios">💾 Guardar</button>
     <button class="ghost" id="logoutBtn">Salir</button>
   </header>
   <div class="wrap">
@@ -188,8 +193,22 @@
           <div class="muted">Ej: 150 = venta = costo × 2.5. Se usa en productos sin margen propio.</div>
         </div>
         <div>
+          <label for="comisionSola">Comisión "solo pantalla" ($) — se suma al costo</label>
+          <input id="comisionSola" type="number" step="500" value="15000" />
+          <div class="muted">Venta pantalla sola = costo + esta comisión. Aplica a todos los repuestos (la fija el dueño).</div>
+        </div>
+        <div>
           <label for="filtroMarca">Filtrar por marca</label>
           <select id="filtroMarca"><option value="">Todas</option></select>
+        </div>
+        <div>
+          <label for="orden">Ordenar por</label>
+          <select id="orden">
+            <option value="">Catálogo</option>
+            <option value="venta-desc">Venta más alta primero</option>
+            <option value="venta-asc">Venta más baja primero</option>
+            <option value="costo-desc">Costo más alto primero</option>
+          </select>
         </div>
         <div style="flex:0">
           <button id="saveBtn">Guardar cambios</button>
@@ -244,7 +263,8 @@
 
 <script>
 const $ = (s) => document.querySelector(s);
-let STATE = { productos: [], margenGlobal: 150, authed: false, filtro: "", q: "" };
+let STATE = { productos: [], margenGlobal: 150, comisionSola: 15000, authed: false, filtro: "", q: "" };
+const PROD_BY_ID = new Map();
 let ROWS = [];
 const CART = new Map(); // id producto -> cantidad
 
@@ -354,7 +374,11 @@ async function cargar() {
   const data = await r.json();
   STATE.productos = data.productos || [];
   STATE.margenGlobal = Number.isFinite(Number(data.margen)) ? Number(data.margen) : 150;
+  STATE.comisionSola = Number.isFinite(Number(data.comision_sola)) ? Number(data.comision_sola) : 15000;
   $("#margenGlobal").value = STATE.margenGlobal;
+  $("#comisionSola").value = STATE.comisionSola;
+  PROD_BY_ID.clear();
+  STATE.productos.forEach(p => PROD_BY_ID.set(p.id, p));
   $("#countPill").textContent = STATE.productos.length + " productos";
   const marcas = [...new Set(STATE.productos.map(p => p.marca).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es"));
   const sel = $("#filtroMarca");
@@ -372,11 +396,11 @@ function margenDeFila(p){
 // así los valores que el dueño ya tipeó NO se pierden al buscar.
 function render() {
   const tb = $("#tbody");
-  tb.innerHTML = STATE.productos.map(p => {
+  tb.innerHTML = STATE.productos.map((p, i) => {
     const costo = Number.isFinite(Number(p.precio_pantalla)) ? Number(p.precio_pantalla) : "";
     const margen = Number.isFinite(Number(p.margen)) ? Number(p.margen) : STATE.margenGlobal;
     const qty = CART.get(p.id) || 0;
-    return `<tr>
+    return `<tr data-oid="${p.id}" data-idx="${i}">
       <td data-label="Marca">${esc(p.marca)}</td>
       <td data-label="Modelo"><span class="valor">${esc(p.modelo || "")}</span></td>
       <td data-label="Calidad">${esc(p.calidad || "")}</td>
@@ -429,6 +453,7 @@ function render() {
     });
   });
   aplicarFiltros();
+  ordenarTabla();
   renderCart();
 }
 
@@ -444,9 +469,9 @@ function aplicarFiltros() {
   const tokens = q ? norm(q).split(/\s+/).filter(Boolean) : [];
   const marca = STATE.filtro;
   let visibles = 0;
-  STATE.productos.forEach((p, i) => {
-    const row = ROWS[i];
-    if (!row) return;
+  ROWS.forEach((row) => {
+    const p = PROD_BY_ID.get(Number(row.dataset.oid));
+    if (!p) return;
     const okMarca = !marca || p.marca === marca;
     const hs = tokens.length ? haystack(p) : "";
     const okQ = !tokens.length || tokens.every(t => hs.includes(t));
@@ -459,6 +484,43 @@ function aplicarFiltros() {
   $("#resumen").textContent = STATE.q || marca
     ? `Mostrando ${visibles} de ${total}`
     : "";
+}
+
+// Lee costo/margen REALES de la fila (lo que el dueño tipeó, aunque no haya guardado).
+function valorFila(row) {
+  const p = PROD_BY_ID.get(Number(row.dataset.oid));
+  const idx = Number(row.dataset.idx) || 0;
+  if (!p) return { costo: 0, venta: 0, idx };
+  const costoEl = row.querySelector(`input[data-costo="${p.id}"]`);
+  let costo = Number(p.precio_pantalla) || 0;
+  if (costoEl && costoEl.value !== "") { const n = Number(costoEl.value); if (Number.isFinite(n) && n > 0) costo = n; }
+  const margenEl = row.querySelector(`input[data-margen="${p.id}"]`);
+  let margen = Number.isFinite(Number(p.margen)) ? Number(p.margen) : STATE.margenGlobal;
+  if (margenEl && margenEl.value !== "") { const n = Number(margenEl.value); if (Number.isFinite(n)) margen = n; }
+  return { costo, venta: Math.round(costo * (1 + margen / 100)), idx };
+}
+
+// Reordena las filas SIN reconstruirlas, así los valores tipeados no se pierden.
+function ordenarTabla() {
+  const sel = $("#orden");
+  const tb = $("#tbody");
+  if (!sel || !tb) return;
+  const modo = sel.value;
+  const rows = [...tb.querySelectorAll("tr")];
+  if (modo === "") {
+    rows.sort((a, b) => (Number(a.dataset.idx) || 0) - (Number(b.dataset.idx) || 0));
+  } else {
+    rows.sort((a, b) => {
+      const va = valorFila(a);
+      const vb = valorFila(b);
+      let d;
+      if (modo === "costo-desc") d = vb.costo - va.costo;
+      else if (modo === "venta-asc") d = va.venta - vb.venta;
+      else d = vb.venta - va.venta;
+      return d !== 0 ? d : va.idx - vb.idx;
+    });
+  }
+  rows.forEach((r) => tb.appendChild(r));
 }
 
 async function login() {
@@ -490,11 +552,11 @@ async function guardar() {
     };
   });
   try {
-    const r = await api("/api/productos", { method: "POST", body: JSON.stringify({ margen: Number($("#margenGlobal").value), productos: out }) });
+    const r = await api("/api/productos", { method: "POST", body: JSON.stringify({ margen: Number($("#margenGlobal").value), comision_sola: Number($("#comisionSola").value), productos: out }) });
     const j = await r.json().catch(()=>({}));
     if (r.ok) {
       status.className = "status ok";
-      status.textContent = `Guardado ✓ (${j.total} productos, margen global ${j.margen}%)`;
+      status.textContent = `Guardado ✓ (${j.total} productos, margen ${j.margen}%, comisión solo pantalla $${Number(j.comision_sola || 0).toLocaleString("es-CL")})`;
       await cargar();
     } else {
       status.className = "status err";
@@ -524,6 +586,7 @@ function copiar(){
 $("#loginBtn").addEventListener("click", login);
 $("#pass").addEventListener("keydown", e => { if (e.key === "Enter") login(); });
 $("#saveBtn").addEventListener("click", guardar);
+$("#saveTopBtn").addEventListener("click", guardar);
 $("#logoutBtn").addEventListener("click", () => {
   STATE.authed = false;
   $("#panel").style.display = "none";
@@ -543,6 +606,7 @@ $("#limpiarBtn").addEventListener("click", () => {
   $("#buscar").focus();
 });
 $("#filtroMarca").addEventListener("change", e => { STATE.filtro = e.target.value; aplicarFiltros(); });
+$("#orden").addEventListener("change", ordenarTabla);
 
 // Carrito: barra fija + hoja inferior
 $("#cartToggle").addEventListener("click", () => { renderCart(); $("#cartOverlay").hidden = false; });

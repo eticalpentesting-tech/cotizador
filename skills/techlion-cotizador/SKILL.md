@@ -29,6 +29,17 @@ metadata:
   o sea 150% de ganancia SOBRE el costo: costo 10k → venta 25k). Cada producto puede tener su propio
   `margen` que prevalece sobre el global. En `build/js/app.js` se calcula con `precioVentaDe(p)` /
   `margenDe(p)` (ya NO existe `FACTOR_MARGEN`).
+- **Dos modos de compra en el cotizador público** (`MODO`: `"reparar"` | `"sola"`):
+  - `reparar` = precio de venta con margen, instalación incluida (default).
+  - `sola` = **vender solo la pantalla** (sin instalación): precio = `costo + comision_sola`.
+    `CATALOGO.comision_sola` es un monto FIJO en pesos (default **15000**), editable en `/admin`
+    (`#comisionSola`) y aplica a TODOS los repuestos. En `app.js`: `comisionSolaDe()`, `precioSolaDe()`,
+    `precioDeModo(p)`.
+- WhatsApp del cliente: **`56929448241`** (+56 9 2944 8241) en `WHATSAPP_NUMBER` (app.js).
+- Garantías (NO inventar): solo pantallas **Originales/OLED** tienen garantía de **1 mes** al momento
+  de la compra instalada (`conGarantia()` checa calidad por "ORIGINAL"/"OLED"); la **genérica AAA NO
+  tiene garantía**. Las reparaciones llevan **abono inicial del 50%** al agendar. Ambos avisos están en
+  el home (`.condiciones` en `index.html`) y se reflejan en el resultado/WhatsApp por modo.
 - `precio_instalacion` está en `null` en todos los productos: la instalación/mano de obra YA está
   cubierta por el margen del 150%, por eso se muestra "Incluida" (no "a confirmar").
 - Tiers de cliente: **mejor** = Original / Gama alta · **media** = OLED* · **baja** = Incell /
@@ -37,9 +48,10 @@ metadata:
 
 ### Estructura del catálogo
 
-- `data/pantallas.json`: `{ glosario_calidad, margen, productos:[{id,marca,modelo,calidad,color,
+- `data/pantallas.json`: `{ glosario_calidad, margen, comision_sola, productos:[{id,marca,modelo,calidad,color,
   precio_pantalla,precio_instalacion,observaciones,margen?}] }` (~1158 productos). `margen` (top) =
-  margen global; `margen` por producto es opcional.
+  margen global; `margen` por producto es opcional. `comision_sola` (top) = comisión fija en $ de la
+  venta "solo pantalla" (default 15000); `server.js` la inicializa sola si el catálogo viejo no la trae.
 - El catálogo se sirve por la API del backend, NO por `file://`. Siempre correr `node server.js`
   (raíz del proyecto) que sirve `build/` y expone `/api/productos`. El frontend hace
   `fetch("/api/productos")`.
@@ -56,6 +68,9 @@ metadata:
     `build/admin.html` (UI de edición, exige login).
 - `build/admin.html`: login + tabla por producto (costo, margen %, venta en vivo). Guarda vía POST.
   Recalcula la venta en el cliente con `costo * (1 + margen/100)`.
+  Desde /admin también se edita la **comisión "solo pantalla"** (`comision_sola`, en $) y se puede
+  **ordenar la lista por venta/costo** (`#orden`: venta más alta primero, etc.) sin perder lo tipeado
+  (reordena filas DOM, no re-renderiza). En móvil hay botón "💾 Guardar" fijo en el header.
 - Para editar precios: correr `node server.js`, abrir `/admin`, loguearse, cambiar costo/margen, Guardar.
   El cambio afecta a TODOS los visitantes (persiste en `pantallas.json`).
 - **Deploy**: `render.yaml` + `package.json` listos. En Render: conectar repo, plan free.

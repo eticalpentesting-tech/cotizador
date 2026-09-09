@@ -1,10 +1,12 @@
 // ===== Configuración =====
-// TODO: reemplazar por el número real en formato internacional sin '+' ni espacios (ej: 56912345678)
-const WHATSAPP_NUMBER = "56929871024";
+const WHATSAPP_NUMBER = "56929448241"; // +56 9 2944 8241 · Techlion
 // Margen de venta: 150% de ganancia SOBRE el costo => venta = costo * (1 + 150/100) = costo * 2.5
 // (ej: costo 10.000 -> venta 25.000). precio_pantalla del catálogo = costo proveedor.
 // El margen ahora es EDITABLE desde /admin: viene en CATALOGO.margen (global) o por producto (p.margen).
 const MARGEN_POR_DEFECTO = 150;
+// Comisión fija de la venta de SOLO pantalla (sin instalación): precio = costo + comisión.
+// La edita el dueño en /admin (CATALOGO.comision_sola). Aplica a todos los repuestos.
+const COMISION_SOLA_POR_DEFECTO = 15000;
 // Video del splash: dejalo en "" para usar la bandera (sin 404). Poné la ruta cuando tengas el video.
 const SPLASH_VIDEO_SRC = "";
 
@@ -38,11 +40,32 @@ function precioVentaDe(p) {
   if (!p || !Number.isFinite(Number(p.precio_pantalla))) return null;
   return Math.round(Number(p.precio_pantalla) * (1 + margenDe(p) / 100));
 }
+// Comisión fija de la venta "solo pantalla" (global, la fija el dueño en /admin).
+function comisionSolaDe() {
+  if (CATALOGO && Number.isFinite(Number(CATALOGO.comision_sola))) return Number(CATALOGO.comision_sola);
+  return COMISION_SOLA_POR_DEFECTO;
+}
+// Precio de venta de SOLO la pantalla (sin instalación) = costo + comisión fija.
+function precioSolaDe(p) {
+  if (!p || !Number.isFinite(Number(p.precio_pantalla))) return null;
+  return Math.round(Number(p.precio_pantalla) + comisionSolaDe());
+}
+// Precio mostrado según el modo elegido: reparar (instalación incluida) o solo pantalla.
+function precioDeModo(p) {
+  return MODO === "sola" ? precioSolaDe(p) : precioVentaDe(p);
+}
+// Garantía: solo Originales/OLED tienen 1 mes (al momento de la compra instalada).
+function conGarantia(p) {
+  const q = ((p && p.calidad) || "").toUpperCase();
+  return q.includes("ORIGINAL") || q.includes("OLED");
+}
 
 // ===== Estado =====
-let CATALOGO = null; // { glosario_calidad, productos }
+let CATALOGO = null; // { glosario_calidad, margen, productos }
 let productosPorMarca = new Map();
 let stockPorModelo = new Map(); // marca|modelo -> stock de muestra (1..10, fijo por sesión)
+// Modo de compra: "reparar" (instalación incluida) o "sola" (vender solo la pantalla).
+let MODO = "reparar";
 
 const el = {
   marca: document.getElementById("marca"),
@@ -50,11 +73,19 @@ const el = {
   calidadOptions: document.getElementById("calidad-options"),
   calidadNota: document.getElementById("calidad-nota"),
   resultado: document.getElementById("resultado"),
+  resultadoTitulo: document.getElementById("resultado-titulo"),
   precioPantalla: document.getElementById("precio-pantalla"),
+  instRow: document.getElementById("inst-row"),
   precioInstalacion: document.getElementById("precio-instalacion"),
   precioTotal: document.getElementById("precio-total"),
   precioHoy: document.getElementById("precio-hoy"),
+  promoBox: document.getElementById("promo"),
+  bloqueo: document.getElementById("bloqueo"),
+  cierre: document.getElementById("cierre"),
   urgenciaStock: document.getElementById("urgencia-stock"),
+  disclaimer: document.getElementById("disclaimer"),
+  garantiaNota: document.getElementById("garantia-nota"),
+  abonoNota: document.getElementById("abono-nota"),
   whatsappCta: document.getElementById("whatsapp-cta"),
   sinResultados: document.getElementById("sin-resultados"),
   ultimaCotizacion: document.getElementById("ultima-cotizacion"),
@@ -63,6 +94,9 @@ const el = {
   cotizadorForm: document.getElementById("cotizador-form"),
   catalogError: document.getElementById("catalog-error"),
   btnReintentar: document.getElementById("btn-reintentar"),
+  modoHint: document.getElementById("modo-hint"),
+  modoBtnReparar: document.getElementById("modo-btn-reparar"),
+  modoBtnSola: document.getElementById("modo-btn-sola"),
 };
 
 // Carga el catálogo con doble origen:
@@ -118,7 +152,31 @@ async function init() {
   el.marca.addEventListener("change", onMarcaChange);
   el.modelo.addEventListener("change", onModeloChange);
 
+  bindModo();
   initTracking();
+}
+
+// ===== Modo de compra: "Reparación" vs "Solo pantalla" =====
+function bindModo() {
+  if (el.modoBtnReparar) el.modoBtnReparar.addEventListener("click", () => setModo("reparar"));
+  if (el.modoBtnSola) el.modoBtnSola.addEventListener("click", () => setModo("sola"));
+}
+function setModo(m) {
+  if (m !== "reparar" && m !== "sola") m = "reparar";
+  if (m === MODO) return;
+  MODO = m;
+  const reparar = m === "reparar";
+  el.modoBtnReparar.classList.toggle("on", reparar);
+  el.modoBtnSola.classList.toggle("on", !reparar);
+  el.modoBtnReparar.setAttribute("aria-selected", String(reparar));
+  el.modoBtnSola.setAttribute("aria-selected", String(!reparar));
+  if (el.modoHint) {
+    el.modoHint.textContent = reparar
+      ? "Abonás el 50% al agendar y lo reparamos en el día."
+      : "Comprás la pantalla sola: costo + comisión de $ " + comisionSolaDe().toLocaleString("es-CL") + ". Sin instalación.";
+  }
+  // Si ya había un modelo elegido, recalculamos todo con el nuevo modo.
+  if (el.modelo && el.modelo.value && productosPorMarca.has(el.marca.value)) onModeloChange();
 }
 
 // Reintentar la carga del catálogo si falló la primera vez.
@@ -197,7 +255,7 @@ function onModeloChange() {
       btn.type = "button";
       btn.className = "pill";
       const etiqueta = p.color ? `${p.calidad} · ${p.color}` : p.calidad;
-      const ventaPill = precioVentaDe(p);
+      const ventaPill = precioDeModo(p);
       const precioVentaPill = (ventaPill != null) ? money(ventaPill) : "—";
       const marco = marcoDeModelo(p.modelo);
       const tierBadge = `<span class="pill-tier tier-${tier}">${tier}${marco ? " · " + marco : ""}</span>`;
@@ -236,15 +294,47 @@ function selectAlternativa(alternativas, index) {
   if (selPill) selPill.classList.add("selected");
 
   const p = alternativas[index];
-  const venta = precioVentaDe(p);
-  const instal = p.precio_instalacion;
-  const instalIncluida = (instal == null);
-  el.precioPantalla.textContent = (venta != null) ? money(venta) : "a confirmar";
-  el.precioInstalacion.textContent = instalIncluida ? "Incluida" : money(instal);
-  el.precioTotal.textContent = (venta != null) ? money(venta + (instalIncluida ? 0 : instal)) : "—";
+  const esSola = MODO === "sola";
+  const venta = precioDeModo(p); // reparación (instalada) o solo pantalla, según el modo
+  const instal = p.precio_instalacion; // null => incluida en el margen
+  const instalIncluida = (instal == null) && !esSola;
+  const total = (venta != null) ? Math.round(venta + (instalIncluida || esSola ? 0 : (instal != null ? instal : 0))) : null;
 
-  const baseHoy = (venta != null ? venta : 0) + (instal != null ? instal : 0);
-  el.precioHoy.textContent = baseHoy > 0 ? money(Math.round(baseHoy * 0.95)) : "—";
+  if (el.resultadoTitulo) el.resultadoTitulo.textContent = esSola ? "📦 TU COTIZACIÓN · SOLO PANTALLA" : "🇨🇱 TU COTIZACIÓN 🇨🇱";
+  el.precioPantalla.textContent = (venta != null) ? money(venta) : "a confirmar";
+  if (el.instRow) el.instRow.hidden = esSola;
+  el.precioInstalacion.textContent = esSola ? "—" : (instalIncluida ? "Incluida" : (instal != null ? money(instal) : "a confirmar"));
+  el.precioTotal.textContent = (total != null) ? money(total) : "—";
+
+  // La promo de hoy (5% + lámina) y el abono 50% aplican solo a reparaciones.
+  const promoVisible = !esSola && (venta != null);
+  if (el.promoBox) el.promoBox.hidden = !promoVisible;
+  if (el.bloqueo) el.bloqueo.hidden = !promoVisible;
+  if (el.cierre) el.cierre.hidden = !promoVisible;
+  const baseHoy = (venta != null ? venta : 0) + (instal != null && !esSola ? instal : 0);
+  el.precioHoy.textContent = (promoVisible && baseHoy > 0) ? money(Math.round(baseHoy * 0.95)) : "—";
+  if (el.abonoNota) el.abonoNota.hidden = esSola;
+
+  if (el.disclaimer) {
+    el.disclaimer.textContent = esSola
+      ? "Precio de venta de la pantalla SOLA, sin instalación. Coordinamos la entrega o el retiro y el cambio queda por tu cuenta."
+      : "Precio de stock con instalación incluida. Reparamos en el día y nos quedamos con tu equipo hasta dejarlo perfecto.";
+  }
+
+  // Garantía según la calidad elegida. "Compra instalada" = reparación.
+  if (el.garantiaNota) {
+    if (esSola) {
+      el.garantiaNota.hidden = true;
+    } else if (conGarantia(p)) {
+      el.garantiaNota.hidden = false;
+      el.garantiaNota.className = "garantia-nota ok";
+      el.garantiaNota.textContent = "🛡️ Garantía de 1 mes: pantalla Original/OLED al momento de la compra instalada.";
+    } else {
+      el.garantiaNota.hidden = false;
+      el.garantiaNota.className = "garantia-nota no";
+      el.garantiaNota.textContent = "⚠️ Esta pantalla NO tiene garantía: solo las Originales/OLED tienen 1 mes de garantía al momento de la compra instalada. La pantalla genérica AAA no tiene garantía.";
+    }
+  }
 
   // Stock real desde el catálogo (p.stock) si el dashboard lo provee; si no, muestra 1..10 fija por modelo.
   const stock = (p.stock != null) ? p.stock : (stockPorModelo.get(p.marca + "|" + p.modelo) ?? 1);
@@ -255,18 +345,36 @@ function selectAlternativa(alternativas, index) {
   const tier = tierDeCalidad(p.calidad);
   const marco = marcoDeModelo(p.modelo);
   const nivelTxt = `Nivel: ${tier}${marco ? " (" + marco + ")" : ""}`;
-  let mensaje =     `Hola, quiero reparar mi pantalla (cambio de display).\n\n` +
-    `Marca: ${p.marca}\n` +
-    `Modelo: ${p.modelo}\n` +
-    `Calidad: ${etiquetaCalidad}\n` +
-    `${nivelTxt}\n` +
-    `Precio pantalla: ${(venta != null) ? money(venta) : "a confirmar"}\n` +
-    `Instalación: ${instalIncluida ? "incluida" : (instal != null ? money(instal) : "a confirmar")}\n` +
-    `Total: ${(venta != null) ? money(venta + (instalIncluida ? 0 : (instal != null ? instal : 0))) : "a confirmar"}\n` +
-    `Promo hoy: 5% dto + lámina de vidrio incluida\n` +
-    `🪵 ¡Quedan ${stock} ${unidad} en stock!\n\n` +
-    `Quiero coordinar la reparación.`;
+  const stockTxt = `🪵 ¡Quedan ${stock} ${unidad} en stock!`;
 
+  let mensaje;
+  if (esSola) {
+    mensaje =
+      `Hola, quiero comprar SOLO la pantalla (sin instalación).\n\n` +
+      `Marca: ${p.marca}\n` +
+      `Modelo: ${p.modelo}\n` +
+      `Calidad: ${etiquetaCalidad}\n` +
+      `${nivelTxt}\n` +
+      `Precio pantalla sola: ${(venta != null) ? money(venta) : "a confirmar"}\n` +
+      `${stockTxt}\n\n` +
+      `Quiero coordinar la compra.`;
+  } else {
+    mensaje =
+      `Hola, quiero reparar mi pantalla (cambio de display).\n\n` +
+      `Marca: ${p.marca}\n` +
+      `Modelo: ${p.modelo}\n` +
+      `Calidad: ${etiquetaCalidad}\n` +
+      `${nivelTxt}\n` +
+      `Precio pantalla: ${(venta != null) ? money(venta) : "a confirmar"}\n` +
+      `Instalación: incluida\n` +
+      `Total: ${(total != null) ? money(total) : "a confirmar"}\n` +
+      `Promo hoy: 5% dto + lámina de vidrio incluida\n` +
+      `Abono inicial 50% al agendar.\n` +
+      `${stockTxt}\n\n` +
+      `Quiero coordinar la reparación.`;
+  }
+
+  el.whatsappCta.textContent = esSola ? "¡QUIERO LA PANTALLA! 📦" : "¡QUIERO REPARARLO! 🇨🇱 🎉";
   el.whatsappCta.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
   saveLastQuote(p, venta, el.whatsappCta.href);
   el.resultado.hidden = false;

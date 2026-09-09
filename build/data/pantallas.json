@@ -16,6 +16,7 @@
    "Mixta (ver modelo)": "Esta marca no tiene un encabezado de calidad separado: la calidad (ORI, INCELL, OLED, SL, CM, etc.) viene escrita dentro del propio nombre del modelo. Revisa el campo 'modelo' para ver la calidad real de cada fila."
   },
   "margen": 150,
+  "comision_sola": 15000,
   "productos": [
   {
    "id": 1,
