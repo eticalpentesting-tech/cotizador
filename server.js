@@ -22,6 +22,13 @@ const ROOT = path.join(__dirname, 'build');
 const DATA = path.join(ROOT, 'data', 'pantallas.json');
 const ADMIN_PASS = process.env.ADMIN_PASS || 'techlion123';
 const PORT = process.env.PORT || 8000;
+// Seguridad: en Render (producción) NUNCA arrancamos con la contraseña por defecto.
+// Si no seteás ADMIN_PASS en Environment, el server se niega a iniciar.
+const IS_RENDER = !!process.env.RENDER;
+if (IS_RENDER && !process.env.ADMIN_PASS) {
+  console.error('Falta ADMIN_PASS. En Render: Environment > Environment Variables, seteá ADMIN_PASS y redeployá.');
+  process.exit(1);
+}
 // Persistencia externa: Render free tiene disco EFÍMERO, así que los cambios del dueño
 // en /admin se pierden al reiniciar/redeployar. Si seteás estas env vars, el catálogo se
 // espeja en Upstash Redis (free tier) y sobrevive. Sin ellas, usa solo el archivo local (dev).
