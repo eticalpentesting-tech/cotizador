@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Techlion · Costos internos</title>
+<style>
+  :root{
+    --bg:#fbf6ec; --surface:#fffdf7; --surface-2:#f3ebd9; --border:#e6dcc6;
+    --text:#2a2118; --text-muted:#6f5f49; --accent:#2563EB;
+    --turquoise:#12b5c4; --turquoise-dark:#0c8e99; --chile-red:#E4002B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:radial-gradient(circle at 18% 20%, rgba(228,0,43,0.03), transparent 42%),
+               radial-gradient(circle at 82% 80%, rgba(37,99,235,0.03), transparent 42%), var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height:1.5;
+  }
+  .flag-stripe{ height:5px; background:linear-gradient(90deg,#0033A0 0 33.33%,#fff 33.33% 66.66%,#E4002B 66.66% 100%); }
+  .topbar{ position:sticky; top:0; z-index:10; background:rgba(251,246,236,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+  .wrap{ max-width:1100px; margin:0 auto; padding:0 20px; }
+  .topbar-inner{ display:flex; align-items:center; justify-content:space-between; height:60px; gap:12px; flex-wrap:wrap; }
+  .brand{ display:flex; align-items:center; gap:10px; font-weight:800; font-size:18px; letter-spacing:-.01em; }
+  .brand-logo{ height:26px; width:auto; }
+  .topbar-cta{ color:var(--text); border:1px solid var(--border); padding:8px 16px; min-height:40px; display:inline-flex; align-items:center; border-radius:999px; font-size:13.5px; text-decoration:none; white-space:nowrap; }
+  .topbar-cta:hover{ border-color:var(--turquoise); }
+  main{ padding:34px 0 70px; }
+  .eyebrow{ font-family:'Consolas','IBM Plex Mono',monospace; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--turquoise-dark); margin:0 0 8px; }
+  h1{ font-size:30px; margin:0 0 6px; letter-spacing:-.02em; }
+  .sub{ color:var(--text-muted); margin:0 0 22px; font-size:14.5px; }
+  .sub b{ color:var(--chile-red); }
+  .buscar{
+    width:100%; max-width:640px; font-size:16px; padding:14px 18px;
+    border:2px solid var(--border); border-radius:14px; background:var(--surface);
+    outline:none; transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .buscar:focus{ border-color:var(--turquoise); box-shadow:0 0 0 4px rgba(18,181,196,.15); }
+  .filtros{ margin:16px 0 10px; display:flex; gap:8px; flex-wrap:wrap; }
+  .chip{
+    border:1px solid var(--border); background:var(--surface); color:var(--text-muted);
+    border-radius:999px; padding:7px 14px; font-size:13px; cursor:pointer; transition:all .12s ease;
+  }
+  .chip:hover{ border-color:var(--turquoise); }
+  .chip.on{ background:var(--turquoise); border-color:var(--turquoise); color:#fff; font-weight:600; }
+  .stats{ color:var(--text-muted); font-size:13px; margin:4px 0 10px; }
+  .scroll{ overflow:auto; border:1px solid var(--border); border-radius:14px; background:var(--surface); box-shadow:0 6px 18px -14px rgba(0,0,0,.3); }
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; min-width:640px; }
+  th,td{ padding:9px 12px; border-bottom:1px solid var(--border); text-align:left; white-space:nowrap; }
+  th{ position:sticky; top:0; background:var(--surface-2); font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); z-index:1; }
+  tbody tr:hover{ background:#f6efdd; }
+  td.marca{ font-weight:700; }
+  td.calidad{ font-size:12.5px; }
+  td.costo{ font-family:'Consolas','IBM Plex Mono',monospace; font-weight:600; text-align:right; }
+  td.color, th.color{ text-align:center; }
+  .badge{ display:inline-block; background:var(--surface-2); border:1px solid var(--border); border-radius:6px; padding:1px 7px; font-size:11.5px; color:var(--text-muted); }
+  .vacio{ padding:40px 20px; text-align:center; color:var(--text-muted); }
+  .error{ padding:40px 20px; text-align:center; }
+  .error .btn{ margin-top:12px; }
+  .btn{ display:inline-block; font-weight:700; font-size:14px; text-decoration:none; padding:10px 18px; border-radius:10px; cursor:pointer; border:none; background:var(--turquoise); color:#fff; }
+  footer{ color:var(--text-muted); font-size:12.5px; padding:20px 0 30px; }
+  .aviso{ display:inline-flex; align-items:center; gap:8px; background:#fff4e0; border:1px solid #eed9a9; color:#7a5a12; border-radius:10px; padding:8px 12px; font-size:13px; margin:0 0 18px; }
+</style>
+</head>
+<body>
+
+<div class="flag-stripe"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="brand"><img src="img/techlion-logo.svg" alt="Techlion" class="brand-logo" onerror="this.style.display='none'">Techlion</span>
+    <a href="index.html" class="topbar-cta">Cotizador público →</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow">Uso interno · técnico</p>
+  <h1>Costos de pantallas</h1>
+  <p class="sub">Precio de <b>compra / proveedor</b> (sin margen). Buscá por marca, modelo o calidad.</p>
+  <p class="aviso">🔒 Uso interno — no compartir con clientes.</p>
+
+  <input id="buscar" class="buscar" type="search" placeholder="Buscar…  ej: iPhone 13 · A15 · Galaxy S21 · OLED" autocomplete="off" />
+
+  <div class="filtros" id="filtros"></div>
+  <p class="stats" id="stats"></p>
+
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Marca</th><th>Modelo</th><th>Calidad</th><th class="color">Color</th><th>Costo</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div id="vacio" class="vacio" hidden>Sin resultados. Probá con otra búsqueda.</div>
+  </div>
+</main>
+
+<footer class="wrap">Techlion · Lista de costos interna. Los precios se editan en /admin y se actualizan solos acá.</footer>
+
+<script>
+(function () {
+  var CATALOGO = null;
+  var marcaSel = "";   // "" = todas
+  var busqueda = "";
+
+  var elBuscar = document.getElementById("buscar");
+  var elFiltros = document.getElementById("filtros");
+  var elStats = document.getElementById("stats");
+  var elTbody = document.getElementById("tbody");
+  var elVacio = document.getElementById("vacio");
+
+  var fmt = function (n) {
+    return n == null ? "—" : "$" + Math.round(n).toLocaleString("es-CL");
+  };
+
+  // Mismo doble origen que el cotizador: backend vivo (/api) o JSON estático (GitHub Pages/Surge).
+  async function cargarCatalogo() {
+    try {
+      var r = await fetch("/api/productos");
+      if (r.ok) return await r.json();
+    } catch (e) {}
+    var r2 = await fetch("data/pantallas.json");
+    if (!r2.ok) throw new Error("HTTP " + r2.status);
+    return await r2.json();
+  }
+
+  function normalizar(s) {
+    return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function filtrar() {
+    var q = normalizar(busqueda).trim();
+    var lista = CATALOGO.productos.filter(function (p) {
+      if (marcaSel && p.marca !== marcaSel) return false;
+      if (!q) return true;
+      return normalizar(p.marca + " " + p.modelo + " " + p.calidad + " " + (p.color || "")).indexOf(q) !== -1;
+    });
+    lista.sort(function (a, b) {
+      var x = (a.marca + "|" + a.modelo + "|" + a.calidad).localeCompare(b.marca + "|" + b.modelo + "|" + b.calidad, "es");
+      return x;
+    });
+    render(lista);
+  }
+
+  function render(lista) {
+    elTbody.innerHTML = lista.map(function (p) {
+      return "<tr>" +
+        "<td class='marca'>" + p.marca + "</td>" +
+        "<td>" + p.modelo + (p.observaciones ? " <span class='badge' title='" + p.observaciones.replace(/"/g, "&quot;") + "'>" + p.observaciones + "</span>" : "") + "</td>" +
+        "<td class='calidad'>" + (p.calidad || "—") + "</td>" +
+        "<td class='color'>" + (p.color ? '<span class="badge">' + p.color + "</span>" : "—") + "</td>" +
+        "<td class='costo'>" + fmt(p.precio_pantalla) + "</td>" +
+        "</tr>";
+    }).join("");
+    elVacio.hidden = lista.length !== 0;
+    elStats.textContent = (marcaSel ? marcaSel + " · " : "") + lista.length + " pantalla" + (lista.length === 1 ? "" : "s") + (busqueda ? " para «" + busqueda + "»" : "");
+  }
+
+  function pintarMarcas() {
+    var marcas = {};
+    CATALOGO.productos.forEach(function (p) { marcas[p.marca] = true; });
+    var names = Object.keys(marcas).sort(function (a, b) { return a.localeCompare(b, "es"); });
+    var html = '<button class="chip' + (marcaSel === "" ? " on" : "") + '" data-marca="">Todas</button>';
+    names.forEach(function (m) {
+      html += '<button class="chip' + (marcaSel === m ? " on" : "") + '" data-marca="' + m.replace(/"/g, "&quot;") + '">' + m + "</button>";
+    });
+    elFiltros.innerHTML = html;
+    elFiltros.querySelectorAll(".chip").forEach(function (b) {
+      b.addEventListener("click", function () {
+        marcaSel = b.dataset.marca;
+        pintarMarcas();
+        filtrar();
+      });
+    });
+  }
+
+  elBuscar.addEventListener("input", function () {
+    busqueda = elBuscar.value;
+    filtrar();
+  });
+
+  cargarCatalogo().then(function (cat) {
+    CATALOGO = cat;
+    pintarMarcas();
+    filtrar();
+  }).catch(function (err) {
+    console.error("Catálogo no cargó:", err);
+    elTbody.innerHTML = '<tr><td colspan="5"><div class="error">No se pudo cargar el catálogo.<br><button class="btn" id="reintentar">↺ Reintentar</button></div></td></tr>';
+    document.getElementById("reintentar").addEventListener("click", function () { location.reload(); });
+  });
+})();
+</script>
+</body>
+</html>

@@ -71,6 +71,9 @@ metadata:
   Desde /admin también se edita la **comisión "solo pantalla"** (`comision_sola`, en $) y se puede
   **ordenar la lista por venta/costo** (`#orden`: venta más alta primero, etc.) sin perder lo tipeado
   (reordena filas DOM, no re-renderiza). En móvil hay botón "💾 Guardar" fijo en el header.
+- `build/costos.html` (página de costos internos, `GET /costos`): **protegida** igual que `/admin`
+  (sin cookie válida → redirect a `/admin`). Se accede desde el header del admin ("📋 Costos").
+  OJO: los costos ya salen por `GET /api/productos` (el cotizador los necesita para calcular venta).
 - Para editar precios: correr `node server.js`, abrir `/admin`, loguearse, cambiar costo/margen, Guardar.
   El cambio afecta a TODOS los visitantes (persiste en `pantallas.json`).
 - **Deploy**: `render.yaml` + `package.json` listos. En Render: conectar repo, plan free.

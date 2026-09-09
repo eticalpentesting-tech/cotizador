@@ -31,6 +31,11 @@
     background:var(--azul); color:#fff; font-size:17px; min-height:48px;
   }
   button.ghost{background:rgba(255,255,255,.2)}
+  a.ghost{
+    color:#fff; background:rgba(255,255,255,.2); text-decoration:none;
+    display:inline-flex; align-items:center; padding:10px 16px;
+    border-radius:12px; font-weight:800; font-size:15px; white-space:nowrap;
+  }
   button.sec{background:#fff; color:var(--tinta); border:2px solid var(--borde)}
   button.danger{background:var(--rojo)}
   button:disabled{opacity:.5; cursor:not-allowed}
@@ -128,7 +133,7 @@
     header h1{font-size:17px}
     header .pill{font-size:13px; display:none}
     #saveTopBtn{display:inline-flex}
-    header button{min-height:44px; padding:8px 14px; font-size:14px; white-space:nowrap}
+    header button, header a.ghost{min-height:44px; padding:8px 14px; font-size:14px; white-space:nowrap}
     .wrap{padding:12px 12px 90px}
     #login.wrap{padding-bottom:20px}
     .card{padding:14px; border-radius:14px; margin-bottom:14px}
@@ -175,6 +180,7 @@
   <header>
     <h1>Techlion · Precios</h1>
     <span class="pill" id="countPill">0 productos</span>
+    <a class="ghost" id="costosLink" href="/costos" title="Costos internos">📋 Costos</a>
     <button class="ghost" id="saveTopBtn" title="Guardar cambios">💾 Guardar</button>
     <button class="ghost" id="logoutBtn">Salir</button>
   </header>

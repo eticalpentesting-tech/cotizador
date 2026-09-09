@@ -198,6 +198,22 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // Página interna de costos (/costos o /costos.html): solo con sesión de admin.
+  // Si no hay cookie válida, redirigimos al login del /admin.
+  if ((pathname === '/costos' || pathname === '/costos.html') && req.method === 'GET') {
+    if (!isAuthed(req)) {
+      res.writeHead(302, { Location: '/admin' });
+      return res.end();
+    }
+    const f = safeJoin('/costos.html');
+    if (!f) return send(res, 403, 'forbidden');
+    fs.readFile(f, (err, data) => {
+      if (err) return send(res, 404, 'no encontrado');
+      send(res, 200, data, 'text/html; charset=utf-8');
+    });
+    return;
+  }
+
   // ---- Archivos estáticos ----
   let filePath = pathname === '/' ? '/index.html' : pathname;
   const full = safeJoin(filePath);

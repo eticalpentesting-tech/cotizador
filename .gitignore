@@ -9,3 +9,9 @@ node_modules/
 
 # Cookies de sesión local (nunca a un repo público: pueden contener tokens)
 cookies.txt
+
+# Capturas/artefactos de verificación y logins locales (no van al repo)
+vercel_login.txt
+prod_*.png
+prod_*.html
+NUL
