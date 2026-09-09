@@ -729,7 +729,6 @@ h1,h2{
   box-shadow:0 4px 12px -4px rgba(18,181,196,.5);
 }
 .modo-btn:focus-visible{ outline:2px solid var(--turquoise); outline-offset:2px; }
-.modo-hint{ font-size:13px; color:var(--text-muted); margin:10px 0 0; }
 
 /* Nota de garantía + abono dentro del resultado */
 .garantia-nota{

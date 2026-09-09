@@ -94,7 +94,6 @@ const el = {
   cotizadorForm: document.getElementById("cotizador-form"),
   catalogError: document.getElementById("catalog-error"),
   btnReintentar: document.getElementById("btn-reintentar"),
-  modoHint: document.getElementById("modo-hint"),
   modoBtnReparar: document.getElementById("modo-btn-reparar"),
   modoBtnSola: document.getElementById("modo-btn-sola"),
 };
@@ -170,11 +169,6 @@ function setModo(m) {
   el.modoBtnSola.classList.toggle("on", !reparar);
   el.modoBtnReparar.setAttribute("aria-selected", String(reparar));
   el.modoBtnSola.setAttribute("aria-selected", String(!reparar));
-  if (el.modoHint) {
-    el.modoHint.textContent = reparar
-      ? "Abonás el 50% al agendar y lo reparamos en el día."
-      : "Comprás la pantalla sola: costo + comisión de $ " + comisionSolaDe().toLocaleString("es-CL") + ". Sin instalación.";
-  }
   // Si ya había un modelo elegido, recalculamos todo con el nuevo modo.
   if (el.modelo && el.modelo.value && productosPorMarca.has(el.marca.value)) onModeloChange();
 }
